@@ -31,6 +31,7 @@
 \usepackage{fancybox}
 \usepackage{makeidx}
 \usepackage{eurosym}
+\usepackage{multirow}
 
 \newcommand{\bp}{\textit{Park~Your~Car }}
 
@@ -159,15 +160,94 @@ This is ultimately a private parking short-term rent solution.
 
 The choice of focusing only on one region is based on the fact that the application will need network effects to be successful. Thus heavy initial promotion is needed. The goal is to implement the offer successfully in Brussels first and then explore other accurate location. Offering the private parking short-term rent everywhere, including non dense area, would have bad impact on the image of the application. Indeed, if a user sees that there is no availability in his neighbourhood, he is unlikely to use it again, although there was no availability in his neighbourhood because there was no need.\footnote{Assumption, to be verified with a survey} \\
 
-Choosing Brussels as a the first city to implement to project is an appropriate choice. Indeed, Brussels is a leading city in Europe. The city is dense. There is 700 000 cars in movement at peak hour for 265 000 available spots.\cite{parkbx} The macro environment presented how Brussels is suitable for \bp.
+Choosing Brussels as a the first city to implement to project is an appropriate choice. Indeed, Brussels is a leading city in Europe. The city is dense. There is 700 000 cars in movement at peak hour for 265 000 available spots.\cite{parkbx} The macro environment presented how Brussels is suitable for \bp. The following map shows the parking rules in Brussels\cite{parkbx} : \\
+
+\begin{figure}[h]
+\centering
+\caption{Map of Brussels' regulated parking area}
+\label{bxmap}
+\includegraphics[keepaspectratio=true,width=\textwidth-2cm]{images/bxpark.png}
+\end{figure}
+
+
+The blue area are free but for a length of 2 hours maximum and in the green, grey, orange and red ones, the driver need to pay to park his car. The \autoref{bxfare} details the price and the maximum time in each zone.\\
+
+\begin{table}[h]
+\centering
+\caption{Brussels' parking fare}
+\label{bxfare}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+           & Green & Grey & Orange & Red  \\ \hline
+Max        & /     & 4:30 & 2:00   & 2:00 \\ \hline
+0:30       & 0.50  & 0.50 & 0.50   & 0.50 \\ \hline
+1:00       & 1.00  & 1.00 & 1.00   & 2.00 \\ \hline
+1:30       & /     & /    & 2.00   & 3.50 \\ \hline
+2:00       & 3.00  & 3.00 & 3.00   & 5.00 \\ \hline
+3:00       & 4.50  & 5.00 & /      & /    \\ \hline
+4:00       & 6.00  & 8.00 & /      & /    \\ \hline
+4:30       & /     & 9.50 & /      & /    \\ \hline
+Extra hour & 1.50  & /    & /      & /    \\ \hline
+\end{tabular}
+\end{table}
+
+As a city with an heavily regulated parking policy, Brussels is the ideal candidate for \bp to start its growth.
 
 \subsection{Customer}
 The service is based on two types customer.\\
 
 In the first place, there is the parking space renter. In order to be able to rent your parking spot, one would need to own a parking spot in Brussels. As the parking spot should be free at a recurring schedule in order to rent it consistently, employed people who do not work at home and use the car to go their work place is an accurate person. One could assume that renting its spot would only attract not wealthy people but renting its spot is also a ecologist act.\footnote{survey} There is also benefit of renting a space if you are a user of the application on the other side as well. Indeed, there would be bonus for space renters.\\
 
-The second type of customer is the one willing to rent a place, the tenant. The people who might fall into that category need to use a car, whether it is owned or leased, in Brussels. They also need to have a smart phone and a mobile internet connection.
+The second type of customer is the one willing to rent a place, the tenant. The people who might fall into that category need to use a car, whether it is owned or leased, in Brussels. They also need to have a smart phone and a mobile internet connection.\\
+Whether this group of people will use the service or not is related to any kind of wealth factor. Indeed, if a driver is looking for a spot and none are available for the period he desire, he cannot pay extra for a free spot, there are none available. If someone on the poor segment of the population is looking for a spot, he will want to find one and pay if needed as he is already in the location and going back home without completing the purpose of the ride is unlikely to be a better option.\\
+More than just owning a smart phone, the typical user has to be aware that such technology exists. A person who know and used at least once \textit{Uber} would fall into such a category.
 
+\subsection{Suppliers of the Industry}
+The supplier of the parking industry as whole are parking sport. For \bp it is precisely private parking spots.\\
+The particularity of the business model is that the supplier is also a customer. Indeed, it will be the owner of the parking spot that will have to register itself in the application an enter its parking spot in the system.\footnote{Should I talk about hosting service as a supplier ?}
+
+\subsection{Competitors}
+\subsubsection{Parking Offer Comparison}
+Before analysing \bp 's competitor in its particular business model, it seems appropriate to compare the different parking offer and why \bp 's offer is relevant.\\
+
+The \autoref{parkof} propose a comparison of the different means available to a motorist to park his car. Commercial parking design big parking lot owned by a private company, private long term parking is parking owned or rented on a monthly basis, finally private parking short term represent \bp 's offer.
+
+\begin{table}[h]
+\centering
+\caption{Parking offer comparison}
+\label{parkof}
+\begin{tabular}{l|l|l|l|l|l|}
+\cline{2-6}
+\multirow{2}{*}{}                           & \multicolumn{2}{c|}{\textbf{Public Parking}}                                                      & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Commercial\\ Parking\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\\ Long Term\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\\ Short Term\end{tabular}}}} \\ \cline{2-3}
+                                            & \multicolumn{1}{c|}{\textbf{Free}} & \multicolumn{1}{c|}{\textbf{Regulated}}                      & \multicolumn{1}{c|}{}                                                                                       & \multicolumn{1}{c|}{}                                                                                              & \multicolumn{1}{c|}{}                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Stay}}         & Very Short                         & Very Short                                                   & \begin{tabular}[c]{@{}l@{}}Short and\\ Long\end{tabular}                                                    & Long                                                                                                               & Short                                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Price}}        & Free                               & \begin{tabular}[c]{@{}l@{}}Cheap to\\ Expensive\end{tabular} & Expensive                                                                                                   & Moderate                                                                                                           & Cheap                                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Location}}     & Scarce                             & Frequent                                                     & Scarce                                                                                                      & Scarce                                                                                                             & Frequent                                                                                                            \\ \hline
+\multicolumn{1}{|l|}{\textbf{Availability}} & High to Low                        & High to Low                                                  & High                                                                                                        & Low                                                                                                                & Moderate                                                                                                            \\ \hline
+\multicolumn{1}{|l|}{\textbf{Speed}}        & Fast                               & Fast                                                         & Slow                                                                                                        & Fast                                                                                                               & Fast                                                                                                                \\ \hline
+\end{tabular}
+\end{table}
+
+From this comparison, it appears clearly that the each mean has a different purpose. Public parking is clearly aimed at very short term stay. Public parking is available all the time as the spots might all be used. Thus, if someone need a short term stay, he would use a commercial parking but this offer is scarce, usually parking lot a present only several key location, moreover they are costly.\footnote{check price} The short term private parking thus make sense as it should be available (once the product is settled) and cheaper than the original parking. To summarise, this option would offer very short term stay cheaper or when there is no spot available and short term stay when it is not possible through public parking (e.g blue zone, free but a stay of maximum 2 hours). Another advantage is that it is fast compared to a commercial parking. In the commercial parking there all the ticket procedure and then you have to leave the parking which can take time.\\
+
+The long term private parking has another purpose, to park the car for a long time or every day at the same spot. This parking option is not captured by \bp although having a private parking is not always possible and \bp could thus help the driver to find a place every day.
+
+\subsubsection{Short Term Private Parking Offers}
+
+\begin{itemize}
+\item ShareMyPark
+\item JustPark
+\item other only for a day
+\item parkopedia, commercial parking
+\item kerb not present in brussels
+\item mobypark both type of parking, few location
+\end{itemize}
+
+\subsection{Porter’s Five Forces}
+
+\subsection{Internal Analysis}
+
+\subsection{SWOT}
 
 \chapter{Company and Product Description}
 
