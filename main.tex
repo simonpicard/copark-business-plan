@@ -36,7 +36,7 @@
 \usepackage{charter}
 \usepackage{graphicx}
 
-\newcommand{\bp}{\textit{Park~Your~Car }}
+\newcommand{\bp}{\textit{Copark }}
 
 
 \begin{document}
@@ -55,7 +55,7 @@
 \begin{center}
 \vfill{}\vfill{}\vfill{}
 %\begin{center}
-{\Huge Business Plan : Park your car}
+{\Huge Business Plan : Copark}
 %\end{center}
 {\Huge \par}
 \begin{center}{\LARGE Simon \textsc{Picard}}\end{center}{\Huge \par}
@@ -78,8 +78,11 @@
 \thispagestyle{empty} 
 \null
 
+\frontmatter
 
 \tableofcontents
+
+\mainmatter
 
 \chapter{Executive Summary}
 
@@ -164,6 +167,17 @@ The \autoref{mapentry} shows how many in street access are present in a selectio
 \label{mapentry}
 \includegraphics[keepaspectratio=true,width=\textwidth-2cm]{images/casestudyander.png}
 \end{figure}
+
+The \autoref{ruexl} is picture of a typical street in Brussels. As one can see, the street is full of cars and the only spots left are empty driveways.
+
+\begin{figure}[h]
+\centering
+\caption{Avenue Général Médecin Derache, a street in Brussels at 5pm, April 2017}
+\label{ruexl}
+\includegraphics[keepaspectratio=true,width=\textwidth-2cm]{images/ruexl.jpg}
+\end{figure}
+
+
 
 When connecting those two facts, a solution for the parking shortage arise and lead to a non zero sum game. Indeed, if the parking owner rent his space when he does not use it, he would earn money, and the driver would be able to rent the space thus finding a spot easily and he would have to pay anyway to park his car. It is assumed that the driver would have to pay as he would be in a situation where he struggle to find a spot, thus in a dense area, thus a location where the parking is charged.\\
 
@@ -318,10 +332,12 @@ Payment will be made online, through debit card and credit card. The renter will
 As seen in the industry overview, the market target is quite large. Indeed, the service is useful for people who use their car in Brussels. The challenge is to build an offer of parking spot large enough, thus to attract enough parking owner on the service.
 
 \section{Competitive Strategy}
+\label{cst}
 As explained in \autoref{poc}, \bp's offer is matching as demand that is currently not captured by the available parking service.\\
 
 On the other, \bp has to attract the same customer that its competitor are targeting in Brussels. The angle of action is to focus on the collectivism impact of the application instead of the pure profit generation. It means that for someone to rent his driveway, its goal would be to be part of the service because he would like it to be available for him also in other location.\\
 This choice comes from two factors. Firstly, because of the apparent fail on focusing only on profit generation, as it seems to be the case for \textit{ShareMyPark} in Brussels. And secondly, because profit generation is hardly possible. Indeed, let's assume that someone is working from 9 am to 5 pm during week days and is willing to lend his parking during that time. Per month, it would lead to a total of 160 hours of potential renting. Let's assume that the parking is rented all the time, at the same price as the in-street parking. In those ideal conditions, the renter would earn an extra 160\euro  per month. Although not negligible, the money generation is not enough for someone to make a living per example. Moreover, as a parking owner, the renter is expected to have a certain level of lifestyle. To conclude, even in unlikely ideal conditions, the potential profit generation is low. But on the other hand, who has not been in a situation of wanting to park his car without obvious offer available ?\\
+A survey conducted in the United States in 2016 showed that 80\% of online sellers says the extra money they earn is "nice to have but not essential"\cite{ospg}, reinforcing the idea the profit generation is not the major of people present on online service with money generation.
 
 To fulfil this aim, \bp will have major differentiation in its policy and its use:
 \begin{itemize}
@@ -360,8 +376,51 @@ Finally, the capabilities of \bp will be its ease of use and access but mostly i
 \chapter{Marketing Plan}
 
 \section{Relevant Market}
-Brussels is the home of 1 175 173\cite{ciafb} habitants. The number of car registered in Brussels in 2016 is 486 876.\cite{mtvr} Everyday, there is also 350 000 commuters coming to Brussels.\cite{bxcommu}\\
-In 2015, in Brussels there was 266 498 garage, parking or roofed spot. Of all those spots, 55 314 were spots linked to a house, thus with an expected driveway.\cite{atpb}
+Brussels is the home of 1 175 173\cite{ciafb} habitants. The number of car registered in Brussels in 2016 is 486 876.\cite{mtvr} Everyday, there is also 350 000 commuters coming to Brussels.\cite{bxcommu} Which lead us to a total of 836 876 cars present in Brussels.\\
+In 2015, in Brussels there was 266 498 garage, parking or roofed spot. Of all those spots, 55 314 were spots linked to a house, thus with an expected driveway.\cite{atpb}\\
+
+In 2015, a survey about smart phone ownership tells us that, in France, 49\% of the population own a smart phone.\cite{spown} This statistic could help us to narrow down the potential market by assuming that the proportion should be roughly the same in Brussels.\\
+A survey lead by the same agency reports to us that, in the United State, 11\% of the population has used a service similar to \textit{AirBnB} to stay overnight in a private residence.\cite{airbnbuse}\\
+The second percentage is more interesting because assuming that every people owning a smart phone would be incline to use \bp seems false. On the other hand, if someone has already been using an house sharing service such as \textit{AirBnB}, it means that he knows about the offer. As \bp is also about sharing a private property, a link can be drawn between the two service. But using \textit{AirBnB} does not mean owning a smart phone. As owning a smart phone is required to use \bp, it is important to take it into consideration. However, it is likely that frequent car user who have been using house sharing service do own a smart phone.\footnote{survey}\\
+
+If we combine the combine the numbers, we obtain that there would be 92 056 potential users of the service and 6 084 potential driveways to be rented. On the other hand, house-sharing services are aimed a people who travel on holidays. \bp is broader and would facilitate the life of poorer people. Thus the number of user could be even bigger but as explained in the previous chapter, the real challenge is to make Brussels' population adopt the service. At then end, this combination gives us a good starting idea of the market size.\\
+
+The survey conducted concluded that college graduates, high-income and under 45 years old were the most likely to use on-demand and shared services.\cite{airbnbuse} As our customer base is quite large this group of people will be the first target.
+
+\section{Service}
+\subsection{Parking Offer}
+\bp is offering to the customer to rent a driveway. There are several extensions for this service :
+\begin{itemize}
+\item Renting personal garage
+\item Offering to enterprise to rent their parking lot when empty, during the week end per example
+\item Having a premium system for some popular places next to stadium or concert venue
+\item Offering a priority service to business where the employee could have some advantage to find a spot
+\item Implementing a cooperation with commercial parking lot to add their offer to our
+\end{itemize} 
+The choice as been made to restrict the service to driveway at first because, as explained, \bp relies on network effect. Thus it is important that the offer is clear and straightforward. By multiplying the service the customer can be confused about what it the purpose of the application. Moreover, as the emphasis is on cooperation and collectivism, some of those example are ot be excluded because they are not aligned.
+
+\subsection{Potential Collaboration}
+Interesting synergies could arise from a collaboration between our the parking rental offer and navigation application. Indeed, if a drive is using a GPS application to guide himself, it could be interesting for him to have several offer of parking near to his destination. As the duration of the journey is estimated by the application, it could even serve as a way to book a spot in advance and have more probability to find a spot that suits the driver.\\
+Such services are offered by \textit{Google Maps} or \textit{Waze}. Those service are to be used from the smart phone and are on the leading edge of the navigation offer. Indeed, it takes into account the traffic of the journey and \textit{Waze} is even one step further, by allowing user to alert the other user of traffic trouble, such as a car in the emerging lane. \bp's offer would thus be an interesting addition to their service.\\
+As those application are already quite successful and powerful, it will be hard for our emerging service to be interesting to them in the first place. However, the option will be explored as the added value is more than just the sum of both service.
+
+\subsection{Branding and Positioning}
+
+In order to be popular, the offer needs to differentiate itself in some way from the other offer available.\\
+
+Regarding classic parking offer, \autoref{poc} presents a detailed comparison of the offers sand shows how \bp's proposition is differentiated. To recall, it is fast, convenient and cheap.\\
+
+Now within the private parking rental segment, the main competitor in Brussels is \textit{ShareMyPark}. The main point of difference between the two offers is the suggested goal of renting a parking spot, full explanation can be found in \autoref{cst}. Briefly, the competitor emphasis on profit generation where \bp emphasis on collectivism.\\
+
+The name of the offer is the first impact on the user mind and should thus reflect the value of the offer but at the same time be self explanatory. The name \bp is designed to be aligned with those requirement. Indeed, the work park is the name, so it reflect in a straightforward way that the offer is about parking. Then, the prefix is "\textit{co}", which refers to collectivism, cooperation, collaboration. This prefix as two purposes. The first one is announcing that the offer is about working together toward a common goal, facilitating parking in Brussels. The second one is explaining that we will reach this goal by sharing our assets.\\
+Finally, although it is not the main value, "\textit{co}" can lead a green image as it is close to "\textit{eco}" which refers to ecology.
+
+\subsubsection{Positioning Statement}
+
+\bp offers to the car drivers of Brussels a faster, cheaper and more convenient way to park their car than any other parking option. We are able to propose this offer by allowing citizens of Brussels to share their driveway between each other. Unlike other parking option, the price is low because the aim is not profit but making everyone's life easier by facilitating parking. The process will be fast and convenient thanks to the mobile application and geolocation. The parking owner will benefit from their rent by basically using the service for free. 
+
+\section{Pricing}
+
 \chapter{Operation and Team}
 
 \chapter{Critical Risks}
