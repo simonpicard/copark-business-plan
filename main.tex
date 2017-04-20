@@ -2,6 +2,7 @@
 \documentclass[12pt,a4paper,oneside]{book}
 \usepackage{setspace}
 \onehalfspacing
+%\doublespacing
 \usepackage[hmargin={2.5cm,2.5cm},vmargin={2.5cm,2.5cm}]{geometry}
 
 
@@ -35,8 +36,12 @@
 \usepackage{adjustbox}
 \usepackage{charter}
 \usepackage{graphicx}
+\usepackage{booktabs}
 
 \newcommand{\bp}{\textit{Copark }}
+
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
 
 
 \begin{document}
@@ -87,6 +92,7 @@
 \chapter{Executive Summary}
 
 \chapter{Industry Environment}
+\label{iechap}
 
 \section{Macro Environmental Analysis}
 
@@ -188,7 +194,7 @@ This is ultimately a private parking short-term rent solution.
 
 The choice of focusing only on one region is based on the fact that the application will need network effects to be successful. Thus heavy initial promotion is needed. The goal is to implement the offer successfully in Brussels first and then explore other accurate locations. Offering the private parking short-term rent everywhere, including non dense area, would have bad impact on the image of the application. Indeed, if a user sees that there is no availability in his neighbourhood, he is unlikely to use it again, although there was no availability in his neighbourhood because there was no need.\footnote{survey} \\
 
-Choosing Brussels as a the first city to implement the project is an appropriate choice. Indeed, Brussels is a leading city in Europe. The city is dense. There is 700 000 cars in movement at peak hour for 265 000 available spots.\cite{parkbx} The macro environment presented how Brussels is suitable for \bp. The following map shows the parking rules in Brussels\cite{parkbx} : \\
+Choosing Brussels as a the first city to implement the project is an appropriate choice. Indeed, Brussels is a leading city in Europe. The city is dense. There is 700 000 cars in movement at peak hour for 265 000 available spots.\cite{parkbx} The macro environment presented how Brussels is suitable for \bp. The \autoref{bxmap} present a map of the parking rules in Brussels\cite{parkbx} : \\
 
 \begin{figure}[h]
 \centering
@@ -204,18 +210,18 @@ The blue area are free but for a length of 2 hours maximum and in the green, gre
 \centering
 \caption{Brussels' parking fare}
 \label{bxfare}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-           & Green & Grey & Orange & Red  \\ \hline
-Max        & /     & 4:30 & 2:00   & 2:00 \\ \hline
-0:30       & 0.50  & 0.50 & 0.50   & 0.50 \\ \hline
-1:00       & 1.00  & 1.00 & 1.00   & 2.00 \\ \hline
-1:30       & /     & /    & 2.00   & 3.50 \\ \hline
-2:00       & 3.00  & 3.00 & 3.00   & 5.00 \\ \hline
-3:00       & 4.50  & 5.00 & /      & /    \\ \hline
-4:00       & 6.00  & 8.00 & /      & /    \\ \hline
-4:30       & /     & 9.50 & /      & /    \\ \hline
-Extra hour & 1.50  & /    & /      & /    \\ \hline
+\begin{tabular}{@{}lcccc@{}}
+\cmidrule(l){2-5}
+\textbf{}                                 & \textbf{Green} & \textbf{Grey} & \textbf{Orange} & \textbf{Red} \\ \midrule
+\multicolumn{1}{l}{\textbf{Max}}        & /              & 4:30          & 2:00            & 2:00         \\ \midrule
+\multicolumn{1}{l}{\textbf{0:30}}       & 0.50\euro{}           & 0.50\euro{}          & 0.50\euro{}            & 0.50\euro{}         \\ \midrule
+\multicolumn{1}{l}{\textbf{1:00}}       & 1.00\euro{}           & 1.00\euro{}          & 1.00\euro{}            & 2.00\euro{}         \\ \midrule
+\multicolumn{1}{l}{\textbf{1:30}}       & /              & /             & 2.00\euro{}            & 3.50\euro{}         \\ \midrule
+\multicolumn{1}{l}{\textbf{2:00}}       & 3.00\euro{}           & 3.00\euro{}          & 3.00\euro{}            & 5.00\euro{}         \\ \midrule
+\multicolumn{1}{l}{\textbf{3:00}}       & 4.50\euro{}           & 5.00\euro{}          & /               & /            \\ \midrule
+\multicolumn{1}{l}{\textbf{4:00}}       & 6.00\euro{}           & 8.00\euro{}          & /               & /            \\ \midrule
+\multicolumn{1}{l}{\textbf{4:30}}       & /              & 9.50\euro{}          & /               & /            \\ \midrule
+\multicolumn{1}{l}{\textbf{Extra hour}} & 1.50\euro{}           & /             & /               & /            \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -248,18 +254,18 @@ The \autoref{parkof} propose a comparison of the different means available to a 
 \begin{adjustbox}{center}
 \begin{tabular}{l|l|l|l|l|l|}
 \cline{2-6}
-\multirow{2}{*}{}                           & \multicolumn{2}{c|}{\textbf{Public Parking}}                                                      & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Commercial\\ Parking\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\\ Long Term\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\\ Short Term\end{tabular}}}} \\ \cline{2-3}
-                                            & \multicolumn{1}{c|}{\textbf{Free}} & \multicolumn{1}{c|}{\textbf{Regulated}}                      & \multicolumn{1}{c|}{}                                                                                       & \multicolumn{1}{c|}{}                                                                                              & \multicolumn{1}{c|}{}                                                                                               \\ \hline
-\multicolumn{1}{|l|}{\textbf{Stay}}         & Very Short                         & Very Short                                                   & \begin{tabular}[c]{@{}l@{}}Short and\\ Long\end{tabular}                                                    & Long                                                                                                               & Short                                                                                                               \\ \hline
-\multicolumn{1}{|l|}{\textbf{Price}}        & Free                               & \begin{tabular}[c]{@{}l@{}}Cheap to\\ Expensive\end{tabular} & Expensive                                                                                                   & Moderate                                                                                                           & Cheap                                                                                                               \\ \hline
-\multicolumn{1}{|l|}{\textbf{Location}}     & Scarce                             & Frequent                                                     & Scarce                                                                                                      & Scarce                                                                                                             & Frequent                                                                                                            \\ \hline
-\multicolumn{1}{|l|}{\textbf{Availability}} & High to Low                        & High to Low                                                  & High                                                                                                        & Low                                                                                                                & Moderate                                                                                                            \\ \hline
-\multicolumn{1}{|l|}{\textbf{Speed}}        & Fast                               & Fast                                                         & Slow                                                                                                        & Fast                                                                                                               & Fast                                                                                                                \\ \hline
+\multirow{2}{*}{}                           & \multicolumn{2}{c|}{\textbf{Public Parking}\T\B}                                                      & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Commercial\T\\ Parking\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\T\\ Long Term\end{tabular}}}} & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Private Parking\T\\ Short Term\end{tabular}}}} \\ \cline{2-3}
+                                            & \multicolumn{1}{c|}{\textbf{Free}} & \multicolumn{1}{c|}{\textbf{Regulated}\T\B}                      & \multicolumn{1}{c|}{}                                                                                       & \multicolumn{1}{c|}{}                                                                                              & \multicolumn{1}{c|}{}                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Stay}}         & Very Short                         & Very Short                                                   & \begin{tabular}[c]{@{}l@{}}Short and\T\\ Long\B\end{tabular}                                                    & Long                                                                                                               & Short                                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Price}}        & Free                               & \begin{tabular}[c]{@{}l@{}}Cheap to\T\\ Expensive\B\end{tabular} & Expensive                                                                                                   & Moderate                                                                                                           & Cheap                                                                                                               \\ \hline
+\multicolumn{1}{|l|}{\textbf{Location}\T\B}     & Scarce                             & Frequent                                                     & Scarce                                                                                                      & Scarce                                                                                                             & Frequent                                                                                                            \\ \hline
+\multicolumn{1}{|l|}{\textbf{Availability}\T\B} & High to Low                        & High to Low                                                  & High                                                                                                        & Low                                                                                                                & Moderate                                                                                                            \\ \hline
+\multicolumn{1}{|l|}{\textbf{Speed}\T\B}        & Fast                               & Fast                                                         & Slow                                                                                                        & Fast                                                                                                               & Fast                                                                                                                \\ \hline
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
-From this comparison, it appears clearly that the each mean has a different purpose. Public parking is clearly aimed at very short term stays. Public parking is not available all the time as the spots might all be used. Thus, if someone needs a short term stay, he would use a commercial parking but this offer is scarce, usually parking lots are present only several key locations, as it can be seen in \autoref{pubparcmap}. Moreover they are expensive.\footnote{check price} The short term private parking thus makes sense as it should be available (once the product is settled) and cheaper than the original parking. To summarise, this option would offer very short term stay cheaper or when there is no spots available and short term stay when it is not possible through public parking (e.g blue zone, free but a stay of maximum 2 hours). Another advantage is that it is fast compared to a commercial parking. In the commercial parking there is all the ticket procedure and then you have to leave the parking which can takes time.\\
+From this comparison, it appears clearly that the each mean has a different purpose. Public parking is clearly aimed at very short term stays. Public parking is not available all the time as the spots might all be used. Thus, if someone needs a short term stay, he would use a commercial parking but this offer is scarce, usually parking lots are present only several key locations, as it can be seen in \autoref{pubparcmap}. Moreover they are expensive, informations about the price can be found in \autoref{priceana}. The short term private parking thus makes sense as it should be available (once the product is settled) and cheaper than the original parking. To summarise, this option would offer very short term stay cheaper or when there is no spots available and short term stay when it is not possible through public parking (e.g blue zone, free but a stay of maximum 2 hours). Another advantage is that it is fast compared to a commercial parking. In the commercial parking there is all the ticket procedure and then you have to leave the parking which can takes time.\\
 
 \begin{figure}[h]
 \centering
@@ -289,11 +295,11 @@ The \autoref{smp} shows that the offers in Brussels are way less known and follo
 \centering
 \caption{Competitors' social media popularity on April 2017}
 \label{smp}
-\begin{tabular}{l|l|l|l|}
-\cline{2-4}
-                               & JustPark & ShareMyPark & MyFelxiPark \\ \hline
-\multicolumn{1}{|l|}{Twitter}  & 6 811    & 24          & 31          \\ \hline
-\multicolumn{1}{|l|}{Facebook} & 19 121   & 780         & 73          \\ \hline
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{}         & JustPark & ShareMyPark & MyFelxiPark \\ \midrule
+\textbf{Twitter}  & 6 811    & 24          & 31          \\ \midrule
+\textbf{Facebook} & 19 121   & 780         & 73          \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -413,13 +419,72 @@ Regarding classic parking offer, \autoref{poc} presents a detailed comparison of
 Now within the private parking rental segment, the main competitor in Brussels is \textit{ShareMyPark}. The main point of difference between the two offers is the suggested goal of renting a parking spot, full explanation can be found in \autoref{cst}. Briefly, the competitor emphasis on profit generation where \bp emphasis on collectivism.\\
 
 The name of the offer is the first impact on the user mind and should thus reflect the value of the offer but at the same time be self explanatory. The name \bp is designed to be aligned with those requirement. Indeed, the work park is the name, so it reflect in a straightforward way that the offer is about parking. Then, the prefix is "\textit{co}", which refers to collectivism, cooperation, collaboration. This prefix as two purposes. The first one is announcing that the offer is about working together toward a common goal, facilitating parking in Brussels. The second one is explaining that we will reach this goal by sharing our assets.\\
-Finally, although it is not the main value, "\textit{co}" can lead a green image as it is close to "\textit{eco}" which refers to ecology.
+On top of that, in the french language, the prefix "\textit{co}" is used to denote sharing, per example \textit{covoiturage} means carpooling and could be translated to \textit{codriving}, \textit{colocation} means flatsharing and could be translated to \textit{corenting}. Finally, although it is not the main value, "\textit{co}" can lead a green image as it is close to "\textit{eco}" which refers to ecology.
 
 \subsubsection{Positioning Statement}
 
 \bp offers to the car drivers of Brussels a faster, cheaper and more convenient way to park their car than any other parking option. We are able to propose this offer by allowing citizens of Brussels to share their driveway between each other. Unlike other parking option, the price is low because the aim is not profit but making everyone's life easier by facilitating parking. The process will be fast and convenient thanks to the mobile application and geolocation. The parking owner will benefit from their rent by basically using the service for free. 
 
 \section{Pricing}
+\label{priceana}
+
+As \bp's does not follow a profit generation aim for the renter, the goal is not to set a high price. Before going in to detail, here is a comparison of the parking price in the competition.
+
+\begin{itemize}
+\item \textbf{In-street} : the \autoref{bxfare} shows the price of parking a car in Brussels. In the area where it is not free, the price is roughly \textbf{1\euro{} for the first hour and then 1.50\euro{} to 3\euro{} for the following}
+\item \textbf{Parking lot} : \textit{Interparking} owns 25 parking lots in Brussels. Their price goes from \textbf{1.30\euro{} per hour to 2.50\euro{}} depending of the area, with a large majority over 2\euro{}.\cite{interpk}
+\item \textbf{MyflexiPark} : the following \autoref{fpprice} present the price per hour of the 56 available parking spot in Brussels in April 2017.
+
+\begin{table}[h]
+\centering
+\caption{Price per hour and availability of parking spot on \textit{MyflexiPark}}
+\label{fpprice}
+\begin{adjustbox}{center}
+\begin{tabular}{@{}lcccccccccc@{}}
+\toprule
+\textbf{Price}  & 0.50\euro{} & 0.90\euro{} & 1.00\euro{} & 1.50\euro{} & 1.75\euro{} & 2.00\euro{} & 3.50\euro{} & 4.00\euro{} & 5.00\euro{} & 10.00\euro{} \\ \midrule
+\textbf{Availability} & 1           & 1           & 24          & 3           & 1           & 12          & 1           & 9           & 3           & 1            \\ \bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+The most used prices are \textbf{1\euro{}, 2\euro{} and 4\euro{} per hour}.
+
+\item \textbf{ShareMyPark} : the \autoref{smpprice} detail the availability of parking spot by range of price per hour in Brussels in April 2017.
+
+\begin{table}[h]
+\centering
+\caption{Range of price per hour and availability of parking spot on \textit{ShareMyPark}}
+\label{smpprice}
+\begin{adjustbox}{center}
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+\textbf{Price}       & $\leq$1.00\euro{} & $\leq$1.50\euro{} & $\leq$2.00\euro{} & $\leq$2.50\euro{} & $\leq$3.00\euro{} & $\leq$4.00\euro{} & $\leq$5.00\euro{} & >5.00\euro{} \\ \midrule
+\textbf{Availability} & 3            & 11           & 65           & 27           & 3            & 4            & 10           & 3           \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+It is interesting to note that there is 49 spot at a rate of \textbf{2\euro{} per hour} and another 26 for \textbf{2.50\euro{} per hour}. Combined they represent 75 spot, which is more than 50\%.
+\end{itemize}
+
+The summary that can be draw from this analysis is that the parking lot are the more expensive, \textit{MyflexiPark} has price set close to the in-street parking and finally \textit{SharMyPark} is overall more expensive thant in-street parking, specially for stays of one hour.\\
+
+In the similar services proposed by \textit{ShareMyPark} and \textit{MyflexiPark}, the price is set by the owner of the parking. This lead to this diversity of price. If the application become popular, a price competition between the renter could emerge from this practice.\\
+
+Following the differentiation point of \bp, the price will be set for the renter in our offer. The price is straightforward : \textbf{0.50\euro{} per hour} with a minimal stay of half an hour for 0.25\euro{}.\\
+This rate is the half of the price to park a car in street for the first hour. The first hour rate is selected because \bp's offer focuses on very short term and mid term stay which are not available through in street parking, e.g fours hours.\\
+Having exactly half the price of the in street parking is a strong marketing claim for the user.\\
+
+On the side of the parking owner, one may think that such a low price will not attract driveway owner as their revenue would be too low. However, the reason why someone would rent his park is not to earn money but to enrich the \bp's service as the renter would be a regular user as well. The money that the renter earns is not supposed to be withdrew but reinvested to use the service on the other also, although the renter can get the money if he wishes. More information about the renter behavioural analysis can be found in \autoref{cst}.\\
+
+In the same way as \textit{ShareMyPark}, \textit{MyflexiPark} and \textit{JustPark}, \bp will have a 20\% tax on every driveway location. This fare is present for the service to be sustainable and is sufficient enough.\footnote{link financial plan}
+
+\section{Distribution Plan}
+
+As \bp offers a service, the distribution strategy is pretty straightforward. Driveway rental is planned to happen from the smart phone of the user, through an application, wherever he is. It is also possible to book a parking sport from the website application trough desktop computer. There is no intermediaries between, the service and the user. On the side of the renting a driveway, it is only possible in selected area where it is useful. The external analysis in \autoref{iechap} has presented Brussels and why this regional area is a relevant choice to implement \bp.
+
+\section{Communication Plan}
 
 \chapter{Operation and Team}
 
