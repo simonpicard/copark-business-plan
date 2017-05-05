@@ -694,21 +694,40 @@ This estimated demand is close to the one previously found, encouraging the idea
 
 The typical driveway renter would be someone who works and his willing to rent its spot in the mean time. Thus, during work day he would rent his spot from 9am to 5pm, or for 8 hours. The demand is expected to be higher during those hours because the in street parking has to be paid at that time.\\
 
-The worker segment could thus be renting their driveway for 8 hours, five days a week. The worker segment can be estimated by using the unemployment rate in Brussels which is 20.4\%.\cite{unemploybx} The number of driveway rented by a worker is thus 4 842. This part of the offer thus represent 774 720 hours of parking rental per month (4 842 * 4 weeks * 5 workday * 8 hours).\\
+The worker segment could thus be renting their driveway for 8 hours, five days a week. The worker segment can be estimated by using the unemployment rate in Brussels which is 20.4\%.\cite{unemploybx} The number of driveway rented by a worker is thus 4 842. This part of the offer thus represent \textbf{774 720} hours of parking rental per month (4 842 * 4 weeks * 5 workday * 8 hours).\\
 
-Seasonality is expected to happen during the summer because it is the period where most worker are going in holiday.\footnote{proof} The worker in Belgium has a minimum of 20 free days per year.\cite{hdbe} By assuming that the worker uses 5 of his free day to go in holiday for a week, the parking rental offer during July and August can be adjusted.\cite{hdbe} The model proposed is that during one week of those month, the parking offer would be available for seven days straight. As it is unlikely that rental will happen at night, the number of ours per day during holiday will be 12. Finally there will be 987 768 hours of parking rental in July and August (4 842 * 3 weeks * 5 workday * 8 hours + 4 842 * 1 weeks * 7 holiday * 12 hours).\\
+Seasonality is expected to happen during the summer because it is the period where most worker are going in holiday.\footnote{proof} The worker in Belgium has a minimum of 20 free days per year.\cite{hdbe} By assuming that the worker uses 5 of his free day to go in holiday for a week, the parking rental offer during July and August can be adjusted.\cite{hdbe} The model proposed is that during one week of those month, the parking offer would be available for seven days straight. As it is unlikely that rental will happen at night, the number of ours per day during holiday will be 12. Finally there will be \textbf{987 768} hours of parking rental in July and August (4 842 * 3 weeks * 5 workday * 8 hours + 4 842 * 1 weeks * 7 holiday * 12 hours).\\
 
 The user base analysis lead to 15 users per driveway available. Assuming that the driveway available will be rented all the time is unrealistic. Thus, a sensitivity analysis will take place to analyse several scenarios.\footnote{survey}
 
+\section{Cost of Operations}
+There is only one operating cost in this business model and it is the rent of a server. Estimating the cost of the server is not an easy task because it depends on the load on it, which itself depends on the number of user and the architecture of the software.\\
+
+The choice is to use a server provided by Amazon which is easy to scale. Basically, the server can be built as the customer which, with different services and power. The service that will be used is \textit{Amazon Elastic Beanstalk}. After on-line research and discussions with a web app developer, it has been analysed that the \textit{Large Web App} example on the \textit{Amazon Web Service Fee Calculator} could represent a server that would be suitable for a service with 50 000 simultaneous users and that a linear extrapolation of the monthly price with the number of user is relistic.\cite{itwlois}\cite{qaws}\cite{hsaws}\\
+
+The price of a server suitable for 50 000 users is 893.29\$ per month.\cite{awsclwa} Thus, the price to sustain 5 000 users is 89.33\$ per month.\\
+
+After the development of the application, Simon Picard will be in charge of the marketing, day to day operations and maintenance. He will work full time for \bp and will receive the minimum wage which is \textbf{1 501,82\euro{}} per month.\cite{eurostatmw}
+
 \section{Cost of Marketing}
 
-\section{Cost of Operations}
+The physical advertising through flyers under garage doors will be made by student riding bicycle. Excluding the high speed lanes, there is 1 983,5 km of road in Brussels.\cite{mtvr} The speed when travelling by bike can be as high as 30 km/h but taking into account that the road network is not a straight line and that the employee will have to constantly go off of his bike in order the distribute the flyer, an 7 km/h pace is more realistic. It means that job will require 283 hours to completed. As the job require physical effort, a 10 \euro{} per hour salary will be offered. The cost of this operation will thus be \textbf{2 830 \euro{}}.
 
-\section{Funding}
+Apero Urbain
+
+Student Association
+
+Couleur Cafe
+
+Repair Cafe and Reseau
+
+Facebook Advertising
 
 \section{Sale Forecast}
 
 \section{Break Even Analysis}
+
+\section{Funding}
 
 
 \backmatter
