@@ -38,6 +38,24 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{pdfpages}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+\colorlet{helpful}{lime!70}
+\colorlet{harmful}{red!30}
+\colorlet{internal}{yellow!20}
+\colorlet{external}{cyan!30}
+\colorlet{S}{helpful!50!internal}
+\colorlet{W}{harmful!50!internal}
+\colorlet{O}{helpful!50!external}
+\colorlet{T}{harmful!50!external}
+
+\newcommand{\texta}{Helpful\\ \tiny (to achieve the objective)\par}
+\newcommand{\textb}{Harmful\\ \tiny (to achieve the objective)\par}
+\newcommand{\textcn}{Internal origin\\ \tiny (product\slash company attributes)\par}
+\newcommand{\textdn}{External origin\\ \tiny (environment\slash market attributes)\par}
+
+\newcommand{\back}[1]{\textcolor{white}{\fontsize{120}{140}\selectfont #1}}
 
 %\usepackage[authoryear, square]{natbib}
 
@@ -365,6 +383,7 @@ The fixed price will serve as a selling argument to attract customers. Our busin
 The ideal scenario would be that most of the transaction stays within the service, that renter uses their revenue only to rent other parking spot. Ultimately leading to a service where parking owner just exchange their driveways.
 
 \subsection{Competitors Strategy Analysis}
+\label{compsa}
 
 \textit{JustPark} and \textit{ShareMyPark} are the two main competitors, this sub section has explaining why they are not successful in Brussels as goal.\\
 
@@ -658,6 +677,7 @@ On the spot list, the user sees how many time it was already rented. If the user
 Once booked, the user drives to the spot, parks his car and that's it. The user will receive an alert on his phone when the time to free the spots is approaching.
 
 \subsection{Additional Features}
+\label{feedes}
 A leader board will be created where user will be able to see who rented the most a parking and which driving owner has rented its spot the most. The leader boards will be monthly or since \bp launch.\\
 The phone contact will be scanned to create a friend list for the user. It will be possible to recognize users from phone number, email or facebook friendship. On the friend list, the user can see who has been renting spots.\\
 If a user does not wish to show his statistic, he can hide them.\\
@@ -669,24 +689,58 @@ If a user has received three strikes, he is banned from \bp. Hence the registrat
 
 \chapter{Critical Risks}
 
-ShareMyPark success
+\begin{itemize}
 
-JustPark Focus on Brussels
+\item If suddenly \textit{ShareMyPark} becomes popular in Brussels, it will be a serious issue for \bp because of the "one takes it all" behaviour of the market which is expected to happen. Indeed, \bp woul then struggle to be relevant to the user as there is already a popular similar service.
 
-Fail to attract driveway owner
+\item Similarly, if \textit{JustPark} focuses on Brussels and gather a large market, the same issue will arise. However, the \autoref{compsa} explains why those two services with the same business model are not expected to reach a large market in Brussels.
 
-Over use of non driveway owner
+\item I f\bp fails to attract driveway owner, the service is at risks. Indeed, the whole offer of \bp relies on people renting their driveway, thus if none do, the service is useless. The promotion of the company is engineered in order to avoid that flaw.
 
-Spot usurpation
+\item If there is a over use of non driveway owner, the service might fail. If the driveway are rented by non driveway owner all the time, the driveway might be disappointed. Indeed, the key reason for a driveway owner to rent his driveway is to be able to rent others, so if they are always rented, he might quit the service. However, there is still the profit generation that is pleasant for the owner and the time advantage of the driveway owner will reduce this issue, more informations can be found in \autoref{advdo}.
 
-Legal Issue
+\item There are potential exploit of \bp. Per example, a user could log into the application, look for available spot and park there without booking it. He would see that it is available and park there knowing that the owner is not there. The fining system in \autoref{feedes} should prevent this behaviours but the risks cannot be completely avoided.
 
-referral program exploit
+\item The referral program could be exploited to generate money on the application and never pay. This will be prevented by the connecting the account of a user to his phone number, licence plate and so on. It is still possible to change phone number and licence plate but the costs becomes quite high.
 
-aversion to rent a spot
+\item The aversion to rent of driveway owner to rent their spot is to be taken into consideration. The service might seems "to good to be true". It is thus very important to explain clearly what are guaranty the user receive and how the operation lead to a safe renting.
+
+\item Finally, there is a potential legal Issue. In Belgium, actually renting its driveway is illegal. Indeed, there should the licence plate on the door of the garage of the car parked. However, it is extremely rare for car to be fined for this transgression. \textit{SahreMyPark} decharge itself from the issue by saying that they are only a mean for the exchange to happen and not actually renting it.\cite{smprtbf} If the issue was to be important, it would possible to image system to avoid such as asking the drivers to place a sticker on the garage with their licence plate when they park. But as \bp aims at sustainability, the city of Brussels should be interested in the concept.
+
+\end{itemize}
 
 
 \section{SWOT}
+
+\begin{center}
+\begin{tikzpicture}[
+    any/.style={minimum width=7cm,minimum height=5cm,%
+                 text width=6.5cm,align=center,outer sep=0pt},
+    header/.style={any,minimum height=1cm,fill=black!10},
+    leftcol/.style={header,minimum width=5cm,text width=4.5cm,rotate=90},
+    mycolor/.style={fill=#1, text=#1!60!black}
+]
+
+\matrix (SWOT) [matrix of nodes,nodes={any,anchor=center},%
+                column sep=-\pgflinewidth,%
+                row sep=-\pgflinewidth,%
+                row 1/.style={nodes=header},%
+                column 1/.style={nodes=leftcol},
+                inner sep=0pt]
+{
+          &|[fill=helpful]| {\texta} & |[fill=harmful]| {\textb} \\
+|[fill=internal]| {\textcn} & |[mycolor=S]| \back{S} & |[mycolor=W]| \back{W} \\
+|[fill=external]| {\textdn} & |[mycolor=O]| \back{O} & |[mycolor=T]| \back{T} \\
+};
+
+\node[any, anchor=center] at (SWOT-2-2) {Sustainability value\\ Application design\\ Promotion strategy\\ Fixed price\\ Safe operation\\ Low investment};
+\node[any, anchor=center] at (SWOT-2-3) {Low experience in the industry\\ Little work experience of the fouders\\ Untried business model\\ Success depends on driveway owners};
+\node[any, anchor=center] at (SWOT-3-2) {Lack of parking spots\\ Repetitive work schedule\\ Sharing economy love\\ Smartphone omnipresence\\ Big market};
+\node[any, anchor=center] at (SWOT-3-3) {Potentially illegal\\ Moral hazard\\ Potential success of competitors};
+
+\end{tikzpicture}
+
+\end{center}
 
 \chapter{Financial Plan}
 \label{fpch}
@@ -888,6 +942,21 @@ Simon and Dan will invest themselves in the company from their money. As analyse
 Including the opportunity cost, Dan will have invest 24 408\euro{} and Simon, 49 408\euro{}. The investment is aligned with the 75-25 equity division.\\
 
 It is important to recall that if \bp does not achieve to acquire users, the founders will get a big amount of the money back, as most of it is designed it sustain the referral program in early stages. Indeed, excluding the referral program, the required amount to invest is 16 132\euro{}, details can be found in \autoref{scom}.
+
+\section{Key Take Away and the Future}
+
+\begin{itemize}
+\item In the suggested model, the required investment is 54 793\euro{}, the company will be profitable after 25 months, and the break even happens after three years and seven months.
+\item The mandatory investment is 16 132\euro{}, the rest depends on the referral program.
+\item In the forecast, only the weekdays are analysed as there is no clear schedule in the week end. Thus an increase in the income is expected.
+\item If sucessful, the company could increase its revenue by selling data of the user. The most desired emplacement can be interesting to establish new commerce or parking lot.
+\item If the company reach the total market (approximately 100 000 users), the server infrastructure will be more expensive and Dan will join the company full time as the CTO to focus on the software.
+\item Once break even happened, Simon will slowly increase his salary to match what he could obtain elsewhere. 
+\item If \bp does not reaches customers, either the founders could quit or they could implement new promotion events. This choice will depends on the current user base.
+\item If the market is totally captured, \bp could expand itself in other dense cities. However, it is important to be careful about the willingness of the population to create a sustainable environment and the place that the sharing economy holds in their culture.
+\item It would possible to hire computer scientist instead of intern development for the software, the cost has been estimated. The advantage of doing it internally is that the end result will be perfectly aligned with the will of Simon. It also lead to less risks as the personal investment in time is cheaper than actually hiring computer scientists.
+\item The referral promotion could stop before reaching the total market, but as every new user leads to new revenue, the investment is interesting.
+\end{itemize}
 
 
 \appendix
