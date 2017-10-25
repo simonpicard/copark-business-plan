@@ -60,6 +60,27 @@
 %\usepackage[authoryear, square]{natbib}
 
 \usepackage[backend=bibtex8,sorting=none]{biblatex} 
+
+\ExecuteBibliographyOptions{labelyear}
+
+\DeclareCiteCommand{\morecite}[\mkbibparens]%
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \printtext[bibhyperref]{%
+     \printfield{prefixnumber}%
+     \printfield{labelnumber}%
+     \ifbool{bbx:subentry}
+       {\printfield{entrysetcount}}
+       {}}%
+   \ifnameundef{labelname}%
+    {}
+    {\setunit{\addcomma\space}%
+     \printnames{labelname}}%
+   \setunit{\addcomma\space}%
+   \printfield{labelyear}}
+  {\multicitedelim}%
+  {\usebibmacro{postnote}}%
+
 \addbibresource{../reference/bibliography.bib}
 
 
@@ -137,10 +158,14 @@ Finally, the \autoref{fpch} is the financial plan of \bp{}. The first part descr
 \chapter{Industry Environment}
 \label{iechap}
 
+This chapter will define the industry environment of the future company. It will start by analysing the market in which the service will operate thanks to a macro environmental analysis. The need for a service such as \bp{} will be presented along with the already existing solutions. Finally, a Porter's Five Forces analysis of the highlighted market is proposed.\\
+
 \section{Macro Environmental Analysis}
 
+The macro environmental analysis is a model which allows one to identify the influence that the macro environmental factors can have on an organisation.\morecite{johnson2014strategique} The following will consider the economic, political, legal, social, environmental and technological factors.
+
 \subsection{Economic}
-%According to the GDP per capita (PPP), the European Union is the second largest economy in the world. Its total GDP is \euro 16.5 trillion in 2016 , which represents 22.8\% of the global GDP\cite{imfgdp}. The 2008 financial crisis appears to be in the process of recovery, as the economy of 19 of its countries advanced by 0.6 percent over the first three months of the year, as compared to the previous quarter\cite{eurorecov}.\\
+%According to the GDP per capita (PPP), the European Union is the second largest economy in the world. Its total GDP is \euro 16.5 trillion in 2016 , which represents 22.8\% of the global GDP\cite{imfgdp}. The 2008 financial crisis appears to be in the process of recovery, as the economy of 19 of its countries advanced by 0.6 percent over the first three months of the year, as compared to the previous quarter\morecite{eurorecov}.\\
 
 %Belgium's economy is mainly composed from the service sector, accounting for 74.9\% of its GDP. Belgium also profits from a heavy industrial sector, which is concentrated mainly in northern Flanders, around Brussels and in Liège and Charleroi. The industry sector represents 21.1\% of Belgium's GDP. Finally, the agriculture sector represents less than 1\% of its GDP.\\
 
@@ -152,7 +177,7 @@ The economy of Brussels is mainly oriented around the service industry, with 88\
 
 Brussels is one of the richest cities of the world with a GDP per capita of 67,811 (PPP) in 2016, which places it at the 9th position within the raking of the city of the OECD.\cite{oecdstat} Brussels is thus the economic capital of the country. Brussels GDP is boosted by a number of commuters from nearby regions. There are 230,000 employees coming from Flanders and another 130,000 coming from Wallonia working in Brussels. On the other hand, only 16\% of Brussels inhabitants work outside of the city.\cite{euresCom}\\
 
-Although having apparently a big wealth, Brussels is not the holder of all of it. Indeed, it appears that the proportion of the unemployed resident of Brussels was 20.4\% in December 2013.\cite{unemploybx}
+Although having apparently a big wealth, Brussels is not the holder of all of it. Indeed, it appears that the proportion of the unemployed resident of Brussels was 20.4\% in December 2013.\morecite{unemploybx}
 
 \subsection{Political and Legal}
 
@@ -160,11 +185,11 @@ Although having apparently a big wealth, Brussels is not the holder of all of it
 
 %The worldwide governance indicator gives us information about the political situation of Belgium. The indicators say that the Belgium is a country of low corruption, high government effectiveness, high regulatory quality, high rule of law and high voice and Accountability. Based on those indicators, Belgium lacks political stability and absence of violence/terrorism with a value in this indicator of 65 in 2015\cite{wbgi}. On the other hand, when compared with other western European countries such as Spain and France, Belgium is valued higher in this field.\\
 
-%Part this political stability score can be explained by the language and regional division of the country and subsequently political opinions.\cite{bailo2016political}.\\
+%Part this political stability score can be explained by the language and regional division of the country and subsequently political opinions.\morecite{bailo2016political}.\\
 
 The Belgian employment laws are based on the consultation of employees and workers. The length of the work is limited to 8 hours per day and 40 hours per week. There is a minimal wage which is valued at \euro 1,501.82 (2015).\cite{eurostatmw}\\
 
-A potential new law known as "Peteers' Law" is being studied, which would make the maximal number of hours that one can work based annually instead of weekly. This would lead to a potential week of 45 hours.\cite{rtlp} This process shows a trend of work deregulation.\\
+A potential new law known as "Peteers' Law" is being studied, which would make the maximal number of hours that one can work based annually instead of weekly. This would lead to a potential week of 45 hours.\morecite{rtlp} This process shows a trend of work deregulation.\\
 
 %As a member of the European Union, Belgium applies the "common customs tariff of the European Union" to goods imported from non-EU countries. Overall, Belgium is open to trade since the country itself relies heavily on it. The trade regulation is decreasing, as one can see from the rise of the European Union, CETA and TAFTA//TTIP. Although those regulations are not currently established, the trend is to facilitate the international trade, especially for Brussels, as the capital of Europe.\\
 
@@ -182,7 +207,7 @@ This super-connection leads to promotion over social media, platforms less shopp
 
 Belgium has a high density of population which impacts its environment particularly in the major cities of the country. Overall, Belgium is oriented toward an environment-friendly approach, being ranked 41 out of 180 in the environment protection index and Belgium has one the most efficient recycling process.\cite{epi} In Flanders, 75 \% of the residential waste produced is reused, recycled or composted.\cite{wastemana}\\
 
-In 2010, a study was conducted about the main means of transportation of Brussels inhabitants. The result was that, within Brussels, the car was used by 32\% of the population, and for movement to or from Brussels, the car was preferred in 63.6\% of the cases.\cite{mtpd}\\
+In 2010, a study was conducted about the main means of transportation of Brussels inhabitants. The result was that, within Brussels, the car was used by 32\% of the population, and for movement to or from Brussels, the car was preferred in 63.6\% of the cases.\morecite{mtpd}\\
 
 A personal survey showed that 73\% of the drivers in Brussels usually struggle to find a parking sport, as it can be seen in \autoref{struggleres}.
 
@@ -193,7 +218,7 @@ Belgium has a well-developed internet infrastructure, and ranks itself among the
 
 \bp{} would also rely on cloud technology for the host of the application and the required computing power. There are lots of offers of hosting available and it does not rely on the location of the use of the application since Belgium has a fast strong internet coverage.\\
 
-\bp{} would be part of the on-demand economy. This model is based on an online platform where independent sellers have an offer for another individual. Classic examples of this economy are \textit{Uber} and \textit{eBay}. Recent surveys and data show that this segment is growing and attracting more and more people, not just a young or wealthy population.\cite{odegrow}
+\bp{} would be part of the on-demand economy. This model is based on an online platform where independent sellers have an offer for another individual. Classic examples of this economy are \textit{Uber} and \textit{eBay}. Recent surveys and data show that this segment is growing and attracting more and more people, not just a young or wealthy population.\morecite{odegrow}
 
 \subsection{Conclusion}
 This analysis allows one to see that Brussels is a suitable market for \bp{}.\\
@@ -215,7 +240,7 @@ The obvious business offer is the parking offered through the big building desig
 
 Then there is the free parking in the street. When a driver wants to find a spot in the street, he would rely on luck and knowledge of the neighbourhood to find it. In rural or low-density area, finding a spot is not a problem as there is low demand. On the other hand, in dense area, the available spots are rather rare because in front of a house there would be around two spots for ten or more inhabitants, leading to an offer too small. Free parking is sometimes subject to time limits in crowded location, the driver could stay only two hours, for example. This process is used to facilitate car turnover.\\
 
-In dense area, the parking is usually subject to charge for non-residents of the area. This was developed as a means to give more liberty to the inhabitant and incentive people to use another means of transportation than the car.\cite{nycar} In the same way as for the free parking, the maximum time of stay of non-free parking is sometime bounded to a few hours to increase the number of spots available.\cite{bxpay} \\
+In dense area, the parking is usually subject to charge for non-residents of the area. This was developed as a means to give more liberty to the inhabitant and incentive people to use another means of transportation than the car.\morecite{nycar} In the same way as for the free parking, the maximum time of stay of non-free parking is sometime bounded to a few hours to increase the number of spots available.\cite{bxpay} \\
 
 The other possibility is to buy a parking space in the street, this option is usually linked to a house. A similar process is to rent the space on a monthly basis. Those are approaches that are suitable for long-term use, typically when the user lives next to the parking spot and struggle to find free ones.
 
@@ -240,7 +265,7 @@ The \autoref{ruexl} is a picture of a typical street in Brussels. The street is 
 
 \begin{figure}[h]
 \centering
-\caption{Avenue Général Médecin Derache, a street in Brussels at 5pm, April 2017}
+\caption{Avenue Général Médecin Derache, a street in Brussels at 5 pm, April 2017}
 \label{ruexl}
 \includegraphics[keepaspectratio=true,width=\textwidth-2cm]{../images/ruexl.jpg}
 \end{figure}
@@ -254,7 +279,7 @@ This is ultimately a private parking short-term rent solution.
 \subsection{Market Segment}
 \bp{} has to deserve its service in dense area. The application will offer its service only in Brussels.\\
 
-The choice of focusing only on one region is based on the fact that the application will need network effects\footnote{\textit{"a network effect is the effect that one user of a good or service has on the value of that product to other people. When a network effect is present, the value of a product or service is dependent on the number of others using it."}\cite{shapiro2013information}} to be successful. Thus heavy initial promotion is needed. The goal is to implement the offer successfully in Brussels first and then explore other accurate locations. Offering the private parking short-term rent everywhere, including non-dense area, would have bad impact on the image of the application. Indeed, if a user sees that there is no availability in his neighbourhood, he is unlikely to use it again, although there was no availability in his neighbourhood because there was no need.\\
+The choice of focusing only on one region is based on the fact that the application will need network effects\footnote{\textit{"A network effect is the effect that one user of a good or service has on the value of that product to other people. When a network effect is present, the value of a product or service is dependent on the number of others using it."}\morecite{shapiro2013information}} to be successful. Thus heavy initial promotion is needed. The goal is to implement the offer successfully in Brussels first and then explore other accurate locations. Offering the private parking short-term rent everywhere, including non-dense area, would have bad impact on the image of the application. Indeed, if a user sees that there is no availability in his neighbourhood, he is unlikely to use it again, although there was no availability in his neighbourhood because there was no need.\\
 
 Choosing Brussels as the first city to implement the project is an appropriate choice. Indeed, Brussels is a leading city in Europe. The city is dense. There are 700,000 cars in movement at peak hours for 265,000 available spots.\cite{parkbx} The macro environmental analysis presented how Brussels is suitable for \bp{}. The \autoref{bxmap} present a map of the parking rules in Brussels\cite{parkbx} : \\
 
@@ -347,7 +372,7 @@ Here is a list of selected competitors for \bp{}.
 
 \begin{itemize}
 \item \textbf{Parkopedia} offers to book a parking spot in parking lots online. It allows the user to compare price, check if there is availability and find an offer close to him. They have a strong presence, they have offers in 75 countries and 6308 cities. Although the business proposes a solution to finding a parking spot, the flaws identified in the previous section still hold: expensive, scarce location and time consuming.
-\item \textbf{JustPark}, the services offer private parking rent for half an hour to a year and is available in almost all Europe. On average, the cost is less than 50\% of the parking alternative. It emphasis on popular location such as airports and stadiums. Any owner of a parking spot can add the spot to be rented and its availability. When renting a spot, there is a possibility to add a photo, a description and there is a comment system from previous renters. The owner of the parking selects the price per hour, day, week and month. The owner gets 80\% of what the user pays, the other 20\% goes to the application. Although the service could be used in all of Europe, it seems to be only used in the United Kingdom. Indeed, the application is very successful there but when looking for spots in Brussels, there is no parking available. The company was founded is 2006 in London. They raised venture capital from BMW i Ventures and Index Venture.\cite{bmwi,iven} They finally raised 1 million £ using crowdfunding, they achieved their target in just four days.\cite{crowd}
+\item \textbf{JustPark}, the services offer private parking rent for half an hour to a year and is available in almost all Europe. On average, the cost is less than 50\% of the parking alternative. It emphasis on popular location such as airports and stadiums. Any owner of a parking spot can add the spot to be rented and its availability. When renting a spot, there is a possibility to add a photo, a description and there is a comment system from previous renters. The owner of the parking selects the price per hour, day, week and month. The owner gets 80\% of what the user pays, the other 20\% goes to the application. Although the service could be used in all of Europe, it seems to be only used in the United Kingdom. Indeed, the application is very successful there but when looking for spots in Brussels, there is no parking available. The company was founded is 2006 in London. They raised venture capital from BMW i Ventures and Index Venture.\cite{bmwi,iven} They finally raised 1 million £ using crowdfunding, they achieved their target in just four days.\morecite{crowd}
 \item \textbf{ShareMyPark} has basically the same offer as \textit{JustPark} but it is available only in Brussels. The service has been created last year, in January 2016. The offer is rather weak, with only a hundred available spots in the city.\footnote{Based on research for a parking time of one hour in April 2017} On top of short-term parking, they also offer long-term and business parking.
 \item \textbf{MyFlexiPark} is another similar service but this time available in all of Belgium. Launched in 2014.
 \end{itemize}
@@ -375,7 +400,7 @@ Another point is that \textit{JustPark} announces that they have 750,000 users a
 
 
 \subsection{Porter's Five Forces}
-The following Porter's Five Forces analysis will focus on the short term private parking industry in Brussels. As it is a rising industry, the analysis has to be adapted.\\
+The Porter's five forces analysis establish the competitive structure of an industry.\morecite{porter1979competitive} The following analysis will focus on the short term private parking industry in Brussels. As it is a rising industry, the analysis has to be adapted.\\
 
 \begin{itemize}
 \item \textbf{Supplier Power} In this industry, the suppliers are the parking spot owner. They play a key role in the success of the business. Indeed, it is not possible to substitute their spot in any way, their offer is scarce. On the other hand, parking spot owner has a direct benefit in offering their parking spot as they would have a direct revenue in an easy and convenient way, almost no involvement from the owner is needed.\\
@@ -391,6 +416,8 @@ On the other hand, the motorist can choose to avoid using his car as a transport
 
 \chapter{Company and Product Description}
 \label{cpdch}
+
+This chapter will clearly state what \bp{} is offering. The competitive advantage of the company will be explained, with a comparison on the strategies of its competitors. The strategy on how to reach the customers is then presented. To finally conclude with an internal analysis of the service.\\
 
 \bp{} will propose to the population of Brussels a fast, cheap and convenient way to park its car in the dense road of the city. Currently, similar online services exist but they struggle to find a user base, a crucial requirement of the service. Indeed, the success of the offer relies on network effects and once a service hit the critical mass of users, it will set a high entry barrier for other similar services. As opposed to the current offer \bp{} will place the incentive for parking owners to rent their driveway on the sustainability and shared economy impact instead of the profit generation.\\
 
@@ -413,7 +440,7 @@ On the other hand, \bp{} has to attract the same customer that its competitors a
 
 This choice comes from two factors. Firstly, because of the apparent fail on focusing only on profit generation, as it seems to be the case for \textit{ShareMyPark} in Brussels. And secondly, because the profit generation is hardly possible. Indeed, let's assume that someone is working from 9 am to 5 pm during week days and is willing to lease his parking during that time. Per month, it would lead to a total of 160 hours of potential renting. Let's assume that the parking is rented all the time, at the same price as the in-street parking. In those ideal conditions, the renter would earn an extra 160\euro{}  per month. Although not negligible, the money generation is not enough for someone to make a living. Moreover, as a parking owner, the renter is expected to have a certain level of lifestyle. To conclude, even in unlikely ideal conditions, the potential profit generation is low. But on the other hand, who has not been in a situation of wanting to park his car without obvious offer available ?\\
 
-A survey conducted in the United States in 2016 showed that 80\% of online sellers say the extra money they earn is "nice to have but not essential", reinforcing the idea that the profit generation is not the major goal of people present on online service with money generation.\cite{ospg}\\
+A survey conducted in the United States in 2016 showed that 80\% of online sellers say the extra money they earn is "nice to have but not essential", reinforcing the idea that the profit generation is not the major goal of people present on online service with money generation.\morecite{ospg}\\
 
 To fulfil this aim, \bp{} will have major differentiation in its policy and its use:
 \begin{itemize}
@@ -434,7 +461,7 @@ A survey pursued for the purpose of \bp{}'s creation showed that 85\% of people 
 
 Both competitors have the same offer and strategy, the renter sets his price. For \textit{JustPark}, it works in the UK and it is very successful. \textit{JustPark} is not targeting Brussels at the moment, they are currently aiming its promotion at Wales, especially Cardiff. On the other hand, \textit{ShareMyPark} have been targeting mainly Brussels for a year but the service is not successful. This observation leads to the following question : why is \textit{ShareMyPark} not successful in Brussels and subsequently why is \textit{JustPark} successful in the UK ?\\
 
-The answer is that the markets are not the same. In the UK, finding a parking spot is even harder than in Brussels.\cite{londonpark} Which leads to a bigger demand, thus higher price and more benefit to rent a driveway.\\
+The answer is that the markets are not the same. In the UK, finding a parking spot is even harder than in Brussels.\morecite{londonpark} Which leads to a bigger demand, thus higher price and more benefit to rent a driveway.\\
 
 Secondly, the Hofstede's individualism factor is higher in the UK than in Belgium, 89 versus 75.\cite{hukbe} Although the factor is quite high in Belgium, the one the UK is extremely high and thus may be one of the explanations of the success of \textit{JustPark}.\\
 
@@ -447,7 +474,7 @@ The first one is classic advertising. As the business is on demand-based, relyin
 
 The second promotion mean will be referral and word-to-mouth. Taking as an example successful campaign from \textit{Take Eat Easy}, \textit{Uber} and \textit{KeyTrade}, the idea is that if a user refers a new one, both of them receive an amount of credit. This lead to two positive effects, first one it incentives the user to refer their friend, thus increasing the user base. Second one is that the new user will be able to try the service for free, if he likes it he is likely to use it again.\\
 
-Thirdly, the last mean is targeted at parking owners. This promotion will be a physical one. The promotion itself will be a small paper aimed at a parking owner, offering them to put their poorly used driveway on the service. The idea is to hire students to go into the streets of Brussels by bike, and to slide the advertisement under the door of the garages that they cross.\\
+Thirdly, the last means is targeted at parking owners. This promotion will be a physical one. The promotion itself will be a small paper aimed at a parking owner, offering them to put their poorly used driveway on the service. The idea is to hire students to go into the streets of Brussels by bike, and to slide the advertisement under the door of the garages that they cross.\\
 
 Finally, as the service is based on sustainability and shared economy, its popularity could be increased using local platform designed to promote sharing.\\
 
@@ -457,10 +484,10 @@ The key component of \bp{} is the parking offer which is provided by driveway ow
 
 The renter is compensated by an amount of money, but this money is expected to be reused within the application directly. Thus if the renter is constantly facing full spots, an issue will arise. \bp{} is designed to offer short term stays and thus it is unlikely that all the spots will be rented all the time. Moreover, the driveway owner does not need a spot all the time as he might have a parking at his workplace. On the other hand, if the renter needs a parking at recurring time, while working for example, \bp{} will give him an advantage over the regular users. The advantage is that regular users will be able to place a rent for a spot maximum 24 hours before the actual rent, whereas no such restriction will be placed on the renter. It thus allows the driveway owner to have a solid and regular parking option and it will not penalise the regular user for the primary use of the application, which is sporadic short-term parking.\\
 
-The potential problem arose because once a regular user booked a parking spot, it would be annoying for him if \bp{} was to cancel it. Moreover, it would be impossible if he is already parked. As the driveway owner are the core of \bp{}, it is normal that they have an advantage over the regular users, otherwise a lack of offer could happen.
+The potential problem arose because once a regular user booked a parking spot, it would be annoying for him if \bp{} was to cancel it. Moreover, it would be impossible if he is already parked. As the driveway owners are the core of \bp{}, it is normal that they have an advantage over the regular users, otherwise a lack of offer could happen.
 
 \section{Internal Analysis}
-The business is not implemented yet but the following describes the aimed resources and capabilities of it.\\
+The aim of an internal analysis is to inventory all the resources that a company possesses.\morecite{meier2015diagnostic} The business is not implemented yet but the following describes the targeted resources and capabilities of it.\\
 
 A required intangible resource is the software developed, it will be the core of \bp{}. There will be three declinations of it, a website, an Android application and an iOS application.\\
 
@@ -473,15 +500,17 @@ Finally, the capabilities of \bp{} will be its ease of use and access but mostly
 \chapter{Marketing Plan}
 \label{mpch}
 
+This chapter is the marketing plan of the company. This plan aims at presenting the operational actions that the company will take in order to achieve balance between offer and demand.\morecite{villemus2011plan} The first part defines the relevant market. The pricing of \bp{} is then analysed, to finish with the distribution plan and the communication plan.\\
+
 \section{Relevant Market}
 \label{rmar}
-Brussels is the home of 1,175,173 inhabitants.\cite{ciafb} The number of cars registered in Brussels in 2016 is 486,876.\cite{mtvr} Every day, there are also 350,000 commuters coming to Brussels.\cite{bxcommu} Which leads us to a total of 836,876 cars present in Brussels.\\
+Brussels is the home of 1,175,173 inhabitants.\cite{ciafb} The number of cars registered in Brussels in 2016 is 486,876.\morecite{mtvr} Every day, there are also 350,000 commuters coming to Brussels.\cite{bxcommu} Which leads us to a total of 836,876 cars present in Brussels.\\
 
-In 2015, in Brussels there was 266,498 garages, parking or roofed spot. Of all those spots, 55,314 were spots linked to a house, thus with an expected driveway.\cite{atpb}\\
+In 2015, in Brussels there was 266,498 garages, parking or roofed spot. Of all those spots, 55,314 were spots linked to a house, thus with an expected driveway.\morecite{atpb}\\
 
-In 2015, a survey about smart phone ownership tells us that, in France, 49\% of the population own a smart phone.\cite{spown} This statistic could help us to narrow down the potential market by assuming that the proportion should be roughly the same in Brussels. Reducing the market segment based on this percentage would be erroneous because our number of potential users is a selection of the population, the owners of cars or parking. Thus it is more likely that this segment of the population owns a smart phone. Indeed, a personal survey showed that 100\% of the people driving frequently own a smart phone as it can be seen in \autoref{drivesmartres}.\\
+In 2015, a survey about smart phone ownership tells us that, in France, 49\% of the population own a smart phone.\morecite{spown} This statistic could help us to narrow down the potential market by assuming that the proportion should be roughly the same in Brussels. Reducing the market segment based on this percentage would be erroneous because our number of potential users is a selection of the population, the owners of cars or parking. Thus it is more likely that this segment of the population owns a smart phone. Indeed, a personal survey showed that 100\% of the people driving frequently own a smart phone as it can be seen in \autoref{drivesmartres}.\\
 
-The survey conducted concluded that college graduates, high-income and under 45 years old were the most likely to use on demand and shared services.\cite{airbnbuse} As our customer base is quite large, this group of people will be the primary marketing target.
+The survey conducted concluded that college graduates, high-income and under 45 years old were the most likely to use on demand and shared services.\morecite{airbnbuse} As our customer base is quite large, this group of people will be the primary marketing target.
 
 \section{Service}
 \subsection{Parking Offer}
@@ -502,7 +531,7 @@ Such services are offered by \textit{Google Maps} or \textit{Waze}. Those servic
 
 As those applications are already quite successful and powerful, it will be hard for our emerging service to be interesting for them in the first place. However, the option will be explored as the added value of the potential collaboration is larger than the sum of the ones of both services.\\
 
-Another collaboration could come from a partnership with a car manufacturer. The goal would be to implement \bp{} as an application the dashboard of the car. The service would be the same but it would be available directly within the car's computer. As \bp{} is not well implemented, such a collaboration seems quite unlikely at first. On the other hand, if \bp{} becomes widely used, having it offered from the car might be a feature that customers would like and thus providing value to the car manufacturer as well.
+Another collaboration could come from a partnership with a car manufacturer. The goal would be to implement \bp{} as an application of the dashboard of the car. The service would be the same but it would be available directly within the car's computer. As \bp{} is not well implemented, such a collaboration seems quite unlikely at first. On the other hand, if \bp{} becomes widely used, having it offered from the car might be a feature that customers would like and thus providing value to the car manufacturer as well.
 
 \subsection{Branding and Positioning}
 
@@ -522,6 +551,8 @@ On top of that, in the French language, the prefix "\textit{co}" is used to deno
 
 \section{Pricing}
 \label{priceana}
+
+The pricing strategy defines the set of decisions and actions undertook in order to determine the structure and the level of price of a product or a service offered to the customers.\morecite{gregson2012pricing}\\
 
 As \bp{}'s does not follow a profit generation aim for the renter, the goal is not to set a high price. Before going into details, here is a comparison of the parking price in the competition.
 
@@ -569,7 +600,7 @@ In the similar services proposed by \textit{ShareMyPark} and \textit{MyflexiPark
 
 Following the differentiation point of \bp{}, the price will be set for the renter in our offer. The price is straightforward : \textbf{1\euro{} per hour} with a minimal stay of half an hour for 0.5\euro{}.\\
 
-This rate is the same of the price to park a car in the street for the first hour. The first hour rate is selected because \bp{}'s offer focuses on very short term and midterm stay which are not available through in street parking, e.g. four hours.\\
+This rate is the same as the price to park a car in the street for the first hour. The first hour rate is selected because \bp{}'s offer focuses on very short term and midterm stay which are not available through in street parking, e.g. four hours.\\
 
 Having exactly the price of the in-street parking is a strong marketing claim for the user.\\
 
@@ -579,17 +610,21 @@ In the same way as \textit{ShareMyPark}, \textit{MyflexiPark} and \textit{JustPa
 
 \subsection{Alternatives}
 
-Another pricing strategy involving having a fixed price of half the in street one has been analysed. This lead to a price of 0.50\euro{} per hour. Although an attracting price, it is too low to be interesting. Beside financial stability that might not be reached with such a price, it is expected to have several bad impacts. The first one is that the parking owners who rent their driveway might think that they can directly pay the service instead of renting the driveway and use to money from the rent. Thus it would decrease an incentive to rent a driveway. The second one is that having such a low price can prevent the user from using the service. The idea behind is that it is too good to be true, it is so cheap that people think it is not sustainable.\\
+Another pricing strategy involving having a fixed price at half of the one in the street has been analysed. This lead to a price of 0.50\euro{} per hour. Although an attracting price, it is too low to be interesting. Beside financial stability that might not be reached with such a price, it is expected to have several bad impacts. The first one is that the parking owners who rent their driveway might think that they can directly pay the service instead of renting the driveway and use to money from the rent. Thus it would decrease an incentive to rent a driveway. The second one is that having such a low price can prevent the user from using the service. The idea behind is that it is too good to be true, it is so cheap that people think it is not sustainable.\\
 
 A membership option was also investigated. This pricing strategy requires the member to pay each month a fixed price and he is then able to park his car in any available spot at any time. This method might be interesting but it is not possible to implement it as a starting strategy since the parking offer is currently null. \bp{} could change its policy after having acquired a big enough offer but it seems inappropriate. First of all, when the offer is available, it will mean that the users like the application as is, thus changing its operation is not interesting. And secondly, changing the policy or announcing that the policy will change after some time will confuse the user base.\\
 
-A dual pricing was analysed as well. The idea was to have different prices whether the user of the application is renting a driveway or not. The price would be lower for the renter. This strategy would lead to a straightforward incentive for users to rent a driveway. This a good point. But in the current strategy, the renter is already rewarded by earning money from his rent. Another problem is that a renter would have different revenue from his spot as there are different prices. This idea was dropped because it would make the service over complex with no new incentive.
+A dual pricing was analysed as well. The idea was to have different prices whether the user of the application is renting a driveway or not. The price would be lower for the renter. This strategy would lead to a straightforward incentive for users to rent a driveway. This is a good point. But in the current strategy, the renter is already rewarded by earning money from his rent. Another problem is that a renter would have different revenue from his spot as there are different prices. This idea was dropped because it would make the service over complex with no new incentive.
 
 \section{Distribution Plan}
+
+The distribution plan is about the organisation of the provision of the product or the service of a company.\morecite{dioux2005distribution}\\
 
 As \bp{} offers a service, the distribution strategy is pretty straightforward. Driveway rental is planned to happen from the smart phone of the user, through an application, wherever he is. It is also possible to book a parking spot from the website application through a desktop computer. There are no intermediaries between the service and the user. On the side of the renting a driveway, it is only possible in selected area where it is useful. The external analysis in \autoref{iechap} has presented Brussels and why this regional area is a relevant choice to implement \bp{}.
 
 \section{Communication Plan}
+
+The communication is the way to plan and coordinate the reaching of the customer of a company.\morecite{ferguson1999communication}\\
 
 As for every business, awareness is a key component of its success. A fortiori for \bp{} since network effect are heavily present. Thus the communication around our offer is crucial.\\
 
@@ -611,7 +646,7 @@ The collaboration aimed is a partnership that would allow the user to receive 10
 It is a form of sponsoring as the promotion will improve the image of the event and thus might bring more people.
 \item \textbf{Student association ball} : in universities and high schools, it is frequent that the student association of the school or of the faculty they belong to organise a ball. At the \textit{Université Libre de Bruxelles}, the most popular ones are the ones from the faculty of Architecture, Engineering and Business. In the academic year 2016-2017, 3400 people said that they would go on the event \textit{Facebook} of the first one. Those balls gather current or former students from the faculty and students from other faculties or school. The population is thus composed by students or young workers.\\
 The partnership proposed is having a photo booth at the venue. The guests could take a picture of themselves using a type of \textit{photomaton}, and would then need to enter their email address to receive the picture. There will be a watermark promoting \bp{}. When sending the picture by email, a quick advertisement of our offer will be present.
-\item \textbf{Couleur Café} : a music festival which takes place late June in Brussels. In 2017, the festival will last for three days, from June the 30th to July the 2nd. Couleur Café is focused on the world music and cultural events. The event manager said that what they are trying to offer to the public is "\textit{mixed, festive, solidary and musical}.\cite{rtbfcc} The event is interesting for our offer because the festival gather people from several segments. The festival is family-friendly and thus gather people with different ages. As defined by the organisation, one of their aims is to promote solidarity, the public is thus interested in sustainability and shared economy and sharing initiative such as the one proposed by \bp{}.\\
+\item \textbf{Couleur Café} : a music festival which takes place late June in Brussels. In 2017, the festival will last for three days, from June the 30th to July the 2nd. Couleur Café is focused on the world music and cultural events. The event manager said that what they are trying to offer to the public is "\textit{mixed, festive, solidary and musical}.\morecite{rtbfcc} The event is interesting for our offer because the festival gather people from several segments. The festival is family-friendly and thus gather people with different ages. As defined by the organisation, one of their aims is to promote solidarity, the public is thus interested in sustainability and shared economy and sharing initiative such as the one proposed by \bp{}.\\
 Here, the goal would be to deliver flyers within the festival and the queue, offering as well 10 hours of free parking on registration. Two stewards would be required to distribute the flyers but, moreover, present the service and discuss it with the guests.
 \item \textbf{Repair Café} : a meeting where people with some repairing skills help each other to repair broken objects. It can be bicycles, clothes, electronics and more. Everything is free and based on volunteering. A repair café can be started anywhere. The \textit{French-speaking Belgian Network of Repair Café} has 22 repair café registered in Brussels.\cite{repair} The community attending those events is thus obviously into sharing and good use of personal possession, which makes them potential users of our application.\\
 The idea is to attend several repair café and present \bp{}'s offer. Then to discuss it with all the interested members.
@@ -637,14 +672,14 @@ In order to fulfil those aims \bp{} will be present on the following social medi
 \item \textbf{Facebook} : 79\% of Belgian internet users own an account.\\Goal : \textbf{inform} and \textbf{promote}.\\
 The presence on \textit{Facebook} will be a page that users can follow. The page will share content about how the service is evolving, its upcoming events, partnerships and facts. Followers will then be informed. Their interest (\textit{follow)} and interaction will the page (\textit{likes}, \textit{shares)} will be seen by their network. 
 \item \textbf{Twitter} : 14\% of Belgian internet users own an account.\\Goal : \textbf{inform} and \textbf{promote}.\\
-The \textit{Twitter} accountof \bp{} will share content about the day-to-day life of the enterprise. New driveway available, promotion stories, ongoing process and present other sharing initiatives aligned with our values. The information available are thus closer to the company and more entertaining than the \textit{Facebook} ones. \textit{Twitter} also possesses a relaying option that user can perform to announce to their community that they like content.
+The \textit{Twitter} account of \bp{} will share content about the day-to-day life of the enterprise. New driveway available, promotion stories, ongoing process and present other sharing initiatives aligned with our values. The information available is thus closer to the company and more entertaining than the \textit{Facebook} one. \textit{Twitter} also possesses a relaying option that user can perform to announce to their community that they like content.
 \item \textbf{YouTube} : 48\% of Belgian internet users own an account.\\Goal : \textbf{present}.\\
 A presentation movie will be created to present \bp{} in a clear and pleasant way. This type of teaser will be uploaded to \textit{YouTube} as it is the most used video sharing platform.
 \item \textbf{Instagram} : 12\% of Belgian internet users own an account.\\Goal : \textbf{promote} and \textbf{present}.\\
 Finally, the \textit{Instagram} account of \bp{} will deserve the purpose of presenting the value of the company. A selection on picture and quote about sustainability, shared economy and ecology will be displayed on the social media.
 \end{itemize}
 
-Social media presence is not to be forgotten but, moreover, if it is implemented it should be done correctly. Indeed, there are several hidden rules about the use of each of them and not following them will make the company look bad. Number of posts per day, type of content, hour of posting and more are to be respected.\cite{smrules}
+Social media presence is not to be forgotten but, moreover, if it is implemented it should be done correctly. Indeed, there are several hidden rules about the use of each of them and not following them will make the company look bad. Number of posts per day, type of content, hour of posting and more are to be respected.\morecite{smrules}
 
 \subsection{Sales Promotion}
 As network effect are important for \bp{}, so is the word-of-mouth marketing.\\
@@ -653,7 +688,7 @@ Users have an incentive to invite their friend to use the service as it makes th
 
 The result is an incentive for users to promote \b free trial for new members which may lead to later use and thus growth of the business.\\
 
-Several successful service companies used word to mouth marketing using referral program as a means. Indeed, \textit{Uber} fast development is partially due to its referral program.\cite{uberef}
+Several successful service companies used word to mouth marketing using referral program as a means. Indeed, \textit{Uber} fast development is partially due to its referral program.\morecite{uberef}
 
 \subsection{Service Design}
 As \bp{} will be used by its community only through mobile phone applications and website, their design is a capital aspect of the business.\\
@@ -675,6 +710,8 @@ The newsletter will be weekly and be mainly a gathering of the best posts of the
 \chapter{Operation and Team}
 \label{otch}
 
+This chapter will explain how the operation of the service will be handled. The team in charge of managing \bp{} is then described. The chapter concludes on the precise way of using the offer of the company.\\
+
 \section{Location}
 \bp{} does not require a physical building at first.\\
 
@@ -683,12 +720,12 @@ The first part of the business implementation is building the website and the mo
 The software development will take place in the private apartment of the owner of the company. The apartment is located in the centre of Brussels and is big enough for meetings and day-to-day work.\\
 
 \section{Asset and Service Requirements}
-This section describes the assets and services that \bp{} require in order to be functional.
+This section describes the assets and services that \bp{} requires in order to be functional.
 
 \begin{itemize}
 \item The core of the \bp{}'s software, the back end. This part of the software is where computation is done. The back end is where the algorithms are and where the database is updated. On the other hand, the front end it \textit{"the visible part of the iceberg"}, it is basically a view for the back end. As applications are more and more multi-platform, it is common to have several front ends.
 
-\item A web front end, for users to access \bp{}'s service through a computer.
+\item A Web front end, for users to access \bp{}'s service through a computer.
 
 \item An iOS front end, for apple smart phone owners to be able to use \bp{}.
 
@@ -703,7 +740,7 @@ The initial management team of \bp{} will be composed of two people. The crew wi
 
 \textbf{Simon Picard} is the founder and the CEO of \bp{}. He has studied computer science and successfully obtained his master degree in the discipline in 2016 at \textit{Université Libre de Bruxelles} in Brussels. He then pursued a Master in Management at \textit{Universidad Carlos III de Madrid} the next year. Simon is a pragmatic thinker. The CEO will be responsible for Strategy, Marketing, Operations, Human Resources, Finance and Accounting.\\
 
-\textbf{Dan Martens} is a partner and the CTO of \bp{}. He studied computer science as well but at the \textit{Institut Paul Lambin} in Brussels for his bachelor and he is now pursing a master degree at the \textit{Université Catholique de Louvain} at Louvain-la-Neuve. Dan has been involved in several IT project where he built a web application and improved his practical knowledge. Dan has a creative personality. The CTO will supervise the R\&D department, develop and maintain the software of the company. He will also take care of Customer Service and Support.\\
+\textbf{Dan Martens} is a partner and the CTO of \bp{}. He studied computer science as well but at the \textit{Institut Paul Lambin} in Brussels for his bachelor and he is now pursing a master degree at the \textit{Université Catholique de Louvain} at Louvain-la-Neuve. Dan has been involved in several IT project where he built a Web application and improved his practical knowledge. Dan has a creative personality. The CTO will supervise the R\&D department, develop and maintain the software of the company. He will also take care of Customer Service and Support.\\
 
 In the first part, both members will work on the development of the software together. Once functional, Dan will then be in charge of its future where Simon is going to dedicate himself for the promotion and expansion of \bp{}. The development will be happening during July and August 2017. Dan will not be involved in the promotion process because he will be working on his master thesis in order to graduate. Dan will thus work only if necessary on the maintenance of the application.\\
 
@@ -761,6 +798,8 @@ If a user has received three strikes, he is banned from \bp{}. Hence the registr
 \chapter{Critical Risks}
 \label{crch}
 
+This chapter lists the critical risks of the business model and concludes with a SWOT analysis.\\
+
 \begin{itemize}
 
 \item If suddenly \textit{ShareMyPark} becomes popular in Brussels, it will be a serious issue for \bp{} because of the "one takes it all" behaviour of the market which is expected to happen. Indeed, \bp{} would then struggle to be relevant to the users as there is already a popular similar service.
@@ -777,12 +816,13 @@ If a user has received three strikes, he is banned from \bp{}. Hence the registr
 
 \item The aversion of driveway owners to rent their spot is to be taken into consideration. The service might seem "too good to be true.” It is thus very important to explain clearly what are the guaranties the user receives and how the operations lead to a safe renting.
 
-\item Finally, there is a potential legal Issue. In Belgium, lending its driveway is illegal even for free to a friend. Indeed, there should be the licence plate on the door of the garage of the car parked. However, it is extremely rare for a car to be fined for this transgression. \textit{SahreMyPark} discharges itself from the issue by stating that it is only a means for the exchange to happen and not actually renting the driveway.\cite{smprtbf} If the issue was to be important, it would be possible to imagine a system to avoid it such as asking the drivers to place a sticker on the garage with their licence plate when they park. But as \bp{} aims at sustainability, the city of Brussels should be interested in the concept and not opposing itself to its growth.
+\item Finally, there is a potential legal Issue. In Belgium, lending its driveway is illegal even for free to a friend. Indeed, there should be the licence plate on the door of the garage of the car parked. However, it is extremely rare for a car to be fined for this transgression. \textit{SahreMyPark} discharges itself from the issue by stating that it is only a means for the exchange to happen and not actually renting the driveway.\morecite{smprtbf} If the issue was to be important, it would be possible to imagine a system to avoid it such as asking the drivers to place a sticker on the garage with their licence plate when they park. But as \bp{} aims at sustainability, the city of Brussels should be interested in the concept and not opposing itself to its growth.
 
 \end{itemize}
 
 
 \section{SWOT}
+The SWOT analysis allows a company to identify its strengths, weaknesses, opportunities and threats in order to help it to define its growth strategy.\morecite{bressy2011management}
 
 \begin{center}
 \begin{tikzpicture}[
@@ -817,6 +857,8 @@ If a user has received three strikes, he is banned from \bp{}. Hence the registr
 \chapter{Financial Plan}
 \label{fpch}
 
+This chapter is the financial plan of \bp{}. The first part describes the cost structure, the revenue of the company and how they are estimated. Then, income statements, cash flow statement and balance sheet based on the previous estimations are proposed. As the whole business relies on variable, an important sensitivity analysis will explain how different scenarios impact the company. The next section describes the funding process of the company. Finally, the key take away of the financial plan are summarised.
+
 \section{Estimated General Demand}
 
 \subsection{Maximal User Base}
@@ -825,11 +867,11 @@ If a user has received three strikes, he is banned from \bp{}. Hence the registr
 
 The maximal user base has been defined in the marketing plan, \autoref{rmar} and concluded that there is a total of 836,876 drivers that could use \bp{} and a maximum of 55,314 driveways to be rented in Brussels.\\
 
-A survey lead in the United States reports to us that 11\% of the population has used a service similar to \textit{AirBnB} to stay overnight in a private residence.\cite{airbnbuse} If someone has already been using a house-sharing service such as \textit{AirBnB}, it means that he knows about the offer and the sharing economy. As \bp{} is also about sharing a private property, a link can be drawn between the two services.\\
+A survey lead in the United States reports to us that 11\% of the population has used a service similar to \textit{AirBnB} to stay overnight in a private residence.\morecite{airbnbuse} If someone has already been using a house-sharing service such as \textit{AirBnB}, it means that he knows about the offer and the sharing economy. As \bp{} is also about sharing a private property, a link can be drawn between the two services.\\
 
 By combining the maximal number of users and the percentage, we obtain that there would be \textbf{92,056} potential users of the service and \textbf{6,084} potential driveways to be rented. However, house-sharing services are aimed a people who travel on holiday. This segment is generally high-income. \bp{} is broader and would facilitate the life of poorer people. Thus the number of users could be even bigger but as explained in the previous chapter, the real challenge is to make Brussels's population adopt the service. At the end, this combination gives us a good starting idea of the demand.\\
 
-Another way to estimate the demand is to extrapolate the user base of \textit{JustPark}. The competitor as a total of 750,000 users.\cite{jpu} The service is mainly utilised in London, a city with a population of 8,673,713 inhabitants.\cite{ciafb} Thus 8.6\% of London's inhabitant are using \textit{JustPark}. So it can be said that 8.6\% of Brussels's population would use \bp{}. Leading this computation to a user base composed by 101,615 people.\\
+Another way to estimate the demand is to extrapolate the user base of \textit{JustPark}. The competitor has a total of 750,000 users.\cite{jpu} The service is mainly utilised in London, a city with a population of 8,673,713 inhabitants.\cite{ciafb} Thus 8.6\% of London's inhabitant are using \textit{JustPark}. So it can be said that 8.6\% of Brussels's population would use \bp{}. Leading this computation to a user base composed by 101,615 people.\\
 
 This estimated demand is close to the one previously found, encouraging the idea that the estimation is plausible.\\
 
@@ -837,20 +879,20 @@ This estimated demand is close to the one previously found, encouraging the idea
 
 The typical driveway renter would be someone who works and is willing to rent his spot in the meantime. Thus, during workdays he would rent his spot from 9 am to 5 pm, or for 8 hours. The demand is expected to be higher during those hours because the in-street parking has to be paid at that time.\\
 
-The worker segment could thus be renting their driveway for 8 hours, five days a week. The worker segment can be estimated by using the unemployment rate in Brussels which is 20.4\%.\cite{unemploybx} The number of the driveway rented by a worker is thus 4,842 at full market captured. This part of the offer thus represent \textbf{774,720} hours of parking rental per month (4,842 * 4 weeks * 5 workday * 8 hours). Per driveway it leads to \textbf{160} hours per month.\\
+The worker segment could thus be renting their driveway for 8 hours, five days a week. The worker segment can be estimated by using the unemployment rate in Brussels which is 20.4\%.\morecite{unemploybx} The number of the driveway rented by a worker is thus 4,842 at full market captured. This part of the offer thus represent \textbf{774,720} hours of parking rental per month (4,842 * 4 weeks * 5 workday * 8 hours). Per driveway it leads to \textbf{160} hours per month.\\
 
-Seasonality is expected to happen during the summer because it is the period where most workers are going on holiday. Indeed, in a recent survey, 59\% of the respondents said that they are going to take vacation during the summer.\cite{hdws} The worker in Belgium has a minimum of 20 free days per year.\cite{hdbe} By assuming that the worker uses 5 of his free days to go on holiday for a week, the parking rental offer during July and August can be adjusted. The model proposed is that during one week of those months, the parking offer would be available for seven days straight. As it is unlikely that rental will happen at night, the number of hours per day during holiday will be 12. Finally, there will be \textbf{987,768} hours of parking rentals in July and August (4,842 * 3 weeks * 5 workday * 8 hours + 4,842 * 1 weeks * 7 holidays * 12 hours). Per driveway it leads to \textbf{204} hours per month.\\
+Seasonality is expected to happen during the summer because it is the period where most workers are going on holiday. Indeed, in a recent survey, 59\% of the respondents said that they are going to take vacation during the summer.\morecite{hdws} The worker in Belgium has a minimum of 20 free days per year.\cite{hdbe} By assuming that the worker uses 5 of his free days to go on holiday for a week, the parking rental offer during July and August can be adjusted. The model proposed is that during one week of those months, the parking offer would be available for seven days straight. As it is unlikely that rental will happen at night, the number of hours per day during holiday will be 12. Finally, there will be \textbf{987,768} hours of parking rentals in July and August (4,842 * 3 weeks * 5 workday * 8 hours + 4,842 * 1 weeks * 7 holidays * 12 hours). Per driveway it leads to \textbf{204} hours per month.\\
 
 The user base analysis leads to 15 users per driveway available. Assuming that the driveway available will be rented all the time is unrealistic.\\
 
 In a survey conducted for this business plan, the following question was asked \textit{"On average, excluding weekends, during the daytime : what is the proportion of the time where your car is parked in a spot that you have to pay for ? (i.e in a paid parking lot or in a chargeable spot in the street)"}. Surveyed people said they were living in a dense city such as Brussels and they are or used to drive a car. The resulting average percentage is \textbf{22\%}.\\
 
-Assuming that the classic user and the driveway renters users will grow at the same rate, it leads to a full rent of the parking available. Indeed, the average user is paying 22\% of the time to park his car during the daytime, weekdays. There are 15 classic users per driveway available. Thus it means that only five users are required to fulfil the offer. With 15 users per driveway, it can safely be assumed that the parking option will be totally used. This analysis leads to a occupancy rate of 100\%. However, inefficiency will arise, it is unlikely that users will be able to switch instantly in parking a spot. Thus the occupancy rate will be decreased to \textbf{90\%}.
+Assuming that the classic user and the driveway renters users will grow at the same rate, it leads to a full rent of the parking available. Indeed, the average user is paying 22\% of the time to park his car during the daytime, weekdays. There are 15 classic users per driveway available. Thus it means that only five users are required to fulfil the offer. With 15 users per driveway, it can safely be assumed that the parking option will be totally used. This analysis leads to an occupancy rate of 100\%. However, inefficiency will arise, it is unlikely that users will be able to switch instantly in parking a spot. Thus the occupancy rate will be decreased to \textbf{90\%}.
 
 \section{Cost of Marketing}
 \label{scom}
 
-The physical advertising through flyers under garage doors will be made by students riding bicycles. Excluding the high-speed lanes, there is 1,983.5 km of roads in Brussels.\cite{mtvr} The speed when travelling by bike can be as high as 30 km/h but taking into account that the road network is not a straight line and that the employee will have to constantly go off and on his bike in order the distribute the flyer, a 7 km/h pace is more realistic. It means that job will require 283 hours to complete. As the job requires physical effort, a 10 \euro{} per hour salary will be offered. The cost of this operation will thus be \textbf{2,830 \euro{}}.\\
+The physical advertising through flyers under garage doors will be made by students riding bicycles. Excluding the high-speed lanes, there is 1,983.5 km of roads in Brussels.\morecite{mtvr} The speed when travelling by bike can be as high as 30 km/h but taking into account that the road network is not a straight line and that the employee will have to constantly go off and on his bike in order the distribute the flyer, a 7 km/h pace is more realistic. It means that job will require 283 hours to complete. As the job requires physical effort, a 10 \euro{} per hour salary will be offered. The cost of this operation will thus be \textbf{2,830 \euro{}}.\\
 
 The average cost per thousand impressions for a \textit{Facebook} ad is 7.29\$.\cite{fbad} As our customer segment is quite small because it is only people living in Brussels, a thousand views per day is as satisfying start. Thus the budget per day is 7,29\$, hence the budget per month 204,12\$, or \textbf{186.61\euro{}}.\footnote{Rates of USD 1 = EUR 0.9142 accessed on 09/05/2017, European Central Bank. This rate will be reused for the following conversions.}\\
 
@@ -869,12 +911,12 @@ Microprocessor & 33.00\$         & \cite{abmc}     \\ \hline
 \end{tabular}
 \end{table}
 
-The partnership with Apero Urbain assumes a free offer to the guests. The offer is 10 hours of free parking, thus the equivalent of 10\euro{}. As \bp{} takes 20\% as a fee, it represents a cost of 8\euro{} per new user. The \textit{Facebook} event from the 2016 edition gathered 3,000 users, based on their attendance on the event.\cite{fbau} Basically, the promotion can be stopped whenever the desired amount of user registration has been attained. There are around 16 events per year with the same attendance range. Thus, assuming that at least 1,000 people would register is realistic. Those 1,000 registrations would cost \textbf{8,000\euro{}}.\\
+The partnership with Apéro Urbain assumes a free offer to the guests. The offer is 10 hours of free parking, thus the equivalent of 10\euro{}. As \bp{} takes 20\% as a fee, it represents a cost of 8\euro{} per new user. The \textit{Facebook} event from the 2016 edition gathered 3,000 users, based on their attendance on the event.\cite{fbau} Basically, the promotion can be stopped whenever the desired amount of user registration has been attained. There are around 16 events per year with the same attendance range. Thus, assuming that at least 1,000 people would register is realistic. Those 1,000 registrations would cost \textbf{8,000\euro{}}.\\
 
 
-The promotion at Couleur Café festival is flyering and promoting \bp{}. Two stewards are to be hired, once again students are targeted for the position. The flyring would start at 8 pm and last for four hours. The price to hire the employee at a 10\euro{} per hour rate is 80\euro{}, as the festival last three days, it would cost a total of 240\euro{}. As the promotion of 10 hours of parking is present as well, its cost has to be taken into consideration. There will be 20,000 quest per day in the 2017 edition. By assuming that 1\% of the guests are interested, 200 people would register for the application per day. Hence a total 600 registrations for \textbf{5,040\euro{}}.\\
+The promotion at Couleur Café festival is flyering and promoting \bp{}. Two stewards are to be hired, once again students are targeted for the position. The flyering would start at 8 pm and last for four hours. The price to hire the employee at a 10\euro{} per hour rate is 80\euro{}, as the festival last three days, it would cost a total of 240\euro{}. As the promotion of 10 hours of parking is present as well, its cost has to be taken into consideration. There will be 20,000 quest per day in the 2017 edition. By assuming that 1\% of the guests are interested, 200 people would register for the application per day. Hence a total 600 registrations for \textbf{5,040\euro{}}.\\
 
-The promotion at the \textit{Repair Café} and the collaboration with \textit{Réseau de Consommateurs Respondable} will be done by Simon Picard, as part of his spoke person responsibilities.\\
+The promotion at the \textit{Repair Café} and the collaboration with \textit{Réseau de Consommateurs Respondable} will be done by Simon Picard, as part of his spokesperson responsibilities.\\
 
 The community manager job will be held by Simon Picard, as part of his daily duties.\\
 
@@ -883,7 +925,7 @@ Finally, the referral promotion grants 10 hours of free parking to the inviter a
 \section{User Base Growth}
 \bp{}'s revenues and expenses are highly depending on the number of users it possesses. Indeed, the server load, the number of referrals and the actual number of hours of parking rented depends on them.\\
 
-In order to evaluate it, a contagion model will be used. A contagion model comes from the epidemiology field. It has already been used to analyse optimal advertising policies in the late ’70s.\cite{sethi1979optimal} A suggestion of use of the model to estimate the user growth requires three data. Those are the \textbf{initial user base}, the \textbf{total population} and the \textbf{propagation rate}.\cite{cmep}\\
+In order to evaluate it, a contagion model will be used. A contagion model comes from the epidemiology field. It has already been used to analyse optimal advertising policies in the late ’70s.\morecite{sethi1979optimal} A suggestion of use of the model to estimate the user growth requires three data. Those are the \textbf{initial user base}, the \textbf{total population} and the \textbf{propagation rate}.\cite{cmep}\\
 
 The total population has been estimated to be 92,056 in \autoref{mubsec}. The proposed model will evaluate a capturation of 10\% of that total market; thus leading to 9,205 final users. The reach of the marketing campaign has been assessed to be 1,600. However, it is unlikely that all the registration will lead to a regular user. Three of those registrations out of ten will be kept as regular users. Finally, the propagation rate can be computed by assessing how many people are required for a new person to start using \bp{} each month. If the propagation rate is 33\%, it means that each month a new person starts using for every three people already using.\\
 
@@ -902,7 +944,7 @@ The previous inputs will be used for the following financial analysis as they ap
 \section{Cost of Operations}
 There is only one operating costs in this business model and it is the rent of a server. Estimating the cost of the server is not an easy task because it depends on the load on it, which itself depends on the number of users and the architecture of the software.\\
 
-The choice is to use a server provided by Amazon which is easy to scale. Basically, the server can be built as the customer wishes, with different services and power. The service that will be used is \textit{Amazon Elastic Beanstalk}. After online research and discussions with a web app developer, it has been analysed that the \textit{Large Web App} example on the \textit{Amazon Web Service Fee Calculator} could represent a server that would be suitable for a service with 50,000 simultaneous users and that a linear extrapolation of the monthly price with the number of users is realistic.\cite{itwlois,qaws,hsaws}\\
+The choice is to use a server provided by Amazon which is easy to scale. Basically, the server can be built as the customer wishes, with different services and power. The service that will be used is \textit{Amazon Elastic Beanstalk}. After online research and discussions with a Web app developer, it has been analysed that the \textit{Large Web App} example on the \textit{Amazon Web Service Fee Calculator} could represent a server that would be suitable for a service with 50,000 simultaneous users and that a linear extrapolation of the monthly price with the number of users is realistic.\cite{itwlois,qaws,hsaws}\\
 
 The price of a server suitable for 50,000 users is 893.29\$ per month.\cite{awsclwa} After conversion it leads to 816.59\euro{}. Thus, the price to sustain 5,000 users is 81.66\euro{} per month.\\
 
@@ -940,7 +982,7 @@ This section assesses the expense per month based on the previously analysed cos
 The recurring monthly expenses of the service are formed by the wages and ad cost, which are fixed. On top of that, the referral program is to be taken into account. Each new user cost 16\euro{}. The server rent has a minimal price of 81.66\euro{} per month and once the user base becomes bigger than 5000, the price is to be correlated as explained in the cost of the operation.\\
 
 
-The depreciation of the software is to be taken into account as well. To fulfil its development, it will require two months of work from two computer scientists as assessed in previous chapter. The average monthly salary of IT specialists in Belgium is 4,704\euro{}.\cite{avslinf} The software is thus valued at four times this amount: \textbf{18,816\euro{}}. As the development world moves fast, the software is expected to be outdated after three years. A linear depreciation will be used and will represent the cost of hiring Dan Martens to update the software when necessary.\\
+The depreciation of the software is to be taken into account as well. To fulfil its development, it will require two months of work from two computer scientists as assessed in previous chapter. The average monthly salary of IT specialists in Belgium is 4,704\euro{}.\morecite{avslinf} The software is thus valued at four times this amount: \textbf{18,816\euro{}}. As the development world moves fast, the software is expected to be outdated after three years. A linear depreciation will be used and will represent the cost of hiring Dan Martens to update the software when necessary.\\
 
 
 The \autoref{eey13} present a graph of the monthly recurring expense of \bp{} for the first three years.
@@ -960,20 +1002,20 @@ The income statement can be found in \autoref{is}. As the number of users and ne
 
 The sales have been explained in \autoref{sf}. The gross profit thus depends on the use of the application.\\
 
-The monthly expenses have been detailed in \autoref{expenses}. On top of those the cost of the events has been included. The \textit{Couleur Café} event will take place in June, the \textit{Apéros Urbain} over the summer and the student ball are each year, in November. February and April. The bike advertisement will take place in September, when the service is launched. In this sheet, the actual cost of a new user is 20\euro{} as the fee that will be recovered is included in the earnings from the rents.\\
+The monthly expenses have been detailed in \autoref{expenses}. On top of those, the cost of the events has been included. The \textit{Couleur Café} event will take place in June, the \textit{Apéros Urbain} over the summer and the student ball are each year, in November. February and April. The bike advertisement will take place in September, when the service is launched. In this sheet, the actual cost of a new user is 20\euro{} as the fee that will be recovered is included in the earnings from the rents.\\
 
-The taxes in Belgium for a company are presented in \autoref{trbe}. The taxes are paid at the end of the year, based on the yearly profit after donation.
+The taxes in Belgium for a company are presented in \autoref{trbe}. The taxes are paid at the end of the year, based on the yearly profit after donations.
 
 \begin{table}[ht]
 \centering
-\caption{Tax rate in Belgium\cite{trbe}}
+\caption{Tax Rates in Belgium\cite{trbe}}
 \label{trbe}
 \begin{tabular}{@{}ll@{}}
 \toprule
-\textbf{Slice}     & \textbf{Tax rate} \\ \midrule
-\euro{} 0 – 25.000       & 24,25 \%          \\
-\euro{} 25.000 – 90.000  & 31 \%             \\
-\euro{} 90.000 – 322.500 & 34,50 \%          \\ \bottomrule
+\textbf{Slice}     & \textbf{Tax rate}s \\ \midrule
+\euro{} 0 – 25,000       & 24,25 \%          \\
+\euro{} 25,000 – 90,000  & 31 \%             \\
+\euro{} 90,000 – 322,500 & 34,50 \%          \\ \bottomrule
 \end{tabular}
 \end{table}
 
@@ -1006,7 +1048,7 @@ The sensitivity analysis will evaluate two variables. As the revenue and the exp
 \includegraphics[keepaspectratio=true,width=\textwidth-2cm]{../images/sensitivity10.png}
 \end{figure}
 
-It can be observed that the fewer initial users there are, the more the initial investment is high. This results from the fact that the as long as there is not enough users to generate enough earnings, the company does not receive sufficient money to cover its costs. This conclusion can be drawn also for the time to positive profit and subsequently the time to break even.\\
+It can be observed that the fewer initial users there are, the more the initial investment is high. This results from the fact that as long as there is not enough users to generate enough earnings, the company does not receive sufficient money to cover its costs. This conclusion can be drawn also for the time to positive profit and subsequently the time to break even.\\
 
 It is important to understand that in all cases, the service will at some point capture the whole market. Once the total market is captured, \bp{} is expected to generate close to 10,000\euro{} of profit per month, taking taxes into account. Indeed, the biggest cost and challenge of the service is to obtain the user base, the referral program is the leading cost. Giving this information into account, the table helps to understand how fast a sufficient portion of the user base makes \bp{} interesting. It can also be seen that for the same number of initial users, the propagation increase the initial investment. This is the result of the referral program once again. Indeed, if the propagation rate is high, a lot of  new members arrive together thus leading to high costs from the promotion. But the profit after 5 years is bigger because there will be more time where \bp{} can take advantage of its full-user base and generate good revenue. Basically, the propagation rate defines how spread is the cost of the referral program. As the targeted market is 9,205 and each referral program cost 16\euro{}, excluding the initial users, the total cost of the referral promotion is 139,600\euro{}.\\
 
@@ -1021,7 +1063,7 @@ The \autoref{sapg100} is a second sensitivity analysis where the total market is
 \includegraphics[keepaspectratio=true,width=\textwidth-2cm]{../images/sensitivity100.png}
 \end{figure}
 
-It can be seen that the initial investment required is bigger in every situation, some with more importance than other, but the profit after five years is way bigger. On the other hand, the time to break even does not grow that much, approximately there is an increase of 33\%. Although this scenario is unlikely, it shows that the business model is scalable and that a bigger market is not a threat to the referral program. Indeed, the revenue earned are sufficient to sustain the referral program, even with a big market.
+It can be seen that the initial investment required is larger in every situation, some with more importance than other, but the profit after five years is way bigger. On the other hand, the time to break even does not grow that much, approximately there is an increase of 33\%. Although this scenario is unlikely, it shows that the business model is scalable and that a bigger market is not a threat to the referral program. Indeed, the revenue earned is sufficient to sustain the referral program, even with a big market.
 
 \section{Funding}
 Simon and Dan will invest themselves in the company from their money. As analysed, the initial investment is 55,000\euro{}. As seen in the equity division, Dan will invest 15,000 and Simon will cover the remaining 40,000\euro{}.\\
@@ -1036,7 +1078,7 @@ It is important to recall that if \bp{} does not achieve to acquire users, the f
 \item In the suggested model, the required investment is 54,793\euro{}, the company will be profitable after 25 months, and the break even happens after three years and seven months.
 \item The mandatory investment is 16,132\euro{}, the rest depends on the referral program.
 \item In the forecast, only the weekdays are analysed as there is no clear schedule in the week end. Thus an increase in the income is expected.
-\item If successful, the company could increase its revenue by selling data of the user. The most desired emplacement can be interesting to establish new commerce or parking lot.
+\item If successful, the company could increase its revenue by selling data of the user. The most desired emplacement can be interesting to establish new commerce or parking lots.
 \item If the company reaches the total market (approximately 100,000 users), the server infrastructure will be more expensive and Dan will join the company full time as the CTO to focus on the software.
 \item Once break even happened, Simon will slowly increase his salary to match what he could obtain elsewhere. 
 \item If \bp{} does not reach customers, either the founders could quit or they could implement new promotion events. This choice will depend on the current user base.
@@ -1056,7 +1098,7 @@ It is important to recall that if \bp{} does not achieve to acquire users, the f
 
 \chapter{Bibliography}
 
-\printbibliography[title={Article references},nottype=misc]
+\printbibliography[title={Article and Book references},nottype=misc]
 \pagebreak
 
 \printbibliography[title={Other references},type=misc]
@@ -1137,5 +1179,9 @@ Would you want to be part of such a driveway exchange system ?
 \label{bs}
 \includepdf[pages={1},landscape=true]{../sheets/bs.pdf}
 
-
+\newpage
+%\newgeometry{hmargin={3.5cm,1.5cm},vmargin={2.5cm,2.5cm}}
+\thispagestyle{empty} 
+\null
 \end{document}
+
