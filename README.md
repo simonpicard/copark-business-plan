@@ -16,4 +16,4 @@ The chapter 6 lists the critical risks of the business model and concludes with 
 
 Finally, the chapter 7 is the financial plan of _Copark_. The first part describes the cost structure, the revenue of the company and how they are estimated. Then, income statements, cash flow statement and balance sheet based on the previous estimations are proposed. As the whole business relies on variable, an important sensitivity analysis will explain how different scenarios impact the company. The next section describes the funding process of the company. Finally, the key take away of the financial plan are summarised.
 
-Read the full business plan [here](business_plan.pdf)
+Read the full business plan [here](business_plan.pdf).
